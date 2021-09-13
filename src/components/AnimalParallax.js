@@ -1,4 +1,4 @@
-
+import React from "react"
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import bg0 from '../img/animalBg-0.svg'
@@ -13,6 +13,8 @@ const Parallax = () => {
     const [currentX, setCurrentX] = useState(0)
     const [currentXProgress, setCurrentXProgress] = useState(0)
 
+    const scale1 = useTransform(scrollX, [0, 100], [1, 2], [{ ease: [0.7] }])
+
     useEffect(() => {
         const unsubscribeX = scrollX.onChange((v) => setCurrentX(Math.round(v)))
         const unsubscribeXProgress = scrollXProgress.onChange((v) => setCurrentXProgress(Math.round(v)))
@@ -21,6 +23,7 @@ const Parallax = () => {
             unsubscribeXProgress()
         }
     }, [])
+
 
     return (
         <div>
@@ -33,9 +36,9 @@ const Parallax = () => {
                     position: 'absolute',
                     left: 0,
                     top: 0,
-                    display: 'inline-block'
+                    scale: scale1,
                 }} />
-            <motion.div
+            {/* <motion.div
                 style={{
                     width: 1888,
                     height: 375,
@@ -44,7 +47,7 @@ const Parallax = () => {
                     position: 'absolute',
                     left: 0,
                     top: 0,
-                    display: 'inline-block'
+                    scale: scale1,
                 }} />
             <motion.div
                 style={{
@@ -55,11 +58,10 @@ const Parallax = () => {
                     position: 'absolute',
                     left: 0,
                     top: 0,
-                    display: 'inline-block'
-                }} />
+                }} /> */}
             <p style={{
                 position: 'fixed'
-            }}>scrollX: {currentX} {currentXProgress}</p>
+            }}>scrollX: {currentX}</p>
         </div>
     )
 }

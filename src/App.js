@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { Example } from "./components/Example";
 import Parallax from './components/AnimalParallax';
 
 function App() {
