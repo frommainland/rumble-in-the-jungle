@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CyrulikRounded';
+    src: url('./font/Cyrulik-Rounded.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'CyrulikSharp';
+    src: url('./font/Cyrulik-Sharp.otf') format('opentype')
+}
