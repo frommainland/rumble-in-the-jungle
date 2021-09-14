@@ -8,6 +8,19 @@ import bg4 from '../img/animalBg-4.svg'
 
 const Parallax = () => {
 
+    const { scrollXProgress, scrollX } = useViewportScroll();
+
+    const scale = useTransform(
+        scrollX,
+        [0, 200, 500],
+        [1, 3, 1]
+    );
+
+    const left = useTransform(
+        scrollX,
+        [0, 200, 500],
+        [0, -250, -550]
+    );
 
     return (
         <div>
@@ -20,6 +33,7 @@ const Parallax = () => {
                     position: 'absolute',
                     left: 0,
                     top: 0,
+                    x: left,
                     display: 'inline-block'
                 }} />
             <motion.div
@@ -33,20 +47,9 @@ const Parallax = () => {
                     top: 0,
                     display: 'inline-block'
                 }} />
-            <motion.div
-                style={{
-                    width: 1888,
-                    height: 375,
-                    backgroundImage: `url(${bg0})`,
-                    backgroundSize: '100% 100%',
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-                    display: 'inline-block'
-                }} />
-            <p style={{
+            {/* <p style={{
                 position: 'fixed'
-            }}>scrollX: {currentX} {currentXProgress}</p>
+            }}>scrollX: {currentX} {currentXProgress}</p> */}
         </div>
     )
 }

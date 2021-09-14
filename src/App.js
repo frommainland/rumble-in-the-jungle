@@ -8,7 +8,13 @@ import Parallax from './components/AnimalParallax';
 function App() {
     return (
         <div className="App">
-            <Comp />
+            <div style={{
+                height: '100%',
+                width: 1888,
+                background: 'red',
+                display: 'inline-block'
+            }}></div>
+            <Parallax />
         </div>
     );
 }
