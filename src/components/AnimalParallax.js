@@ -1,70 +1,40 @@
-import React from "react"
-import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
+
+import { motion, useMotionValue } from "framer-motion"
 import bg0 from '../img/animalBg-0.svg'
 import bg1 from '../img/animalBg-1.svg'
 import bg2 from '../img/animalBg-2.svg'
 import bg3 from '../img/animalBg-3.svg'
 import bg4 from '../img/animalBg-4.svg'
 
-const Parallax = () => {
 
-    const { scrollXProgress, scrollX } = useViewportScroll();
-    const [currentX, setCurrentX] = useState(0)
-    const [currentXProgress, setCurrentXProgress] = useState(0)
+import React, { useEffect, useRef } from 'react';
 
-    const scale1 = useTransform(scrollX, [0, 100], [1, 2], [{ ease: [0.7] }])
+const Comp = () => {
+    const ref = useRef();
+    const offset = useMotionValue(0)
+
+    const handleScroll = () => {
+        const posX = ref.current.getBoundingClientRect().left;
+        offset = window.pageXOffset - posX;
+        console.log(offset);
+    };
 
     useEffect(() => {
-        const unsubscribeX = scrollX.onChange((v) => setCurrentX(Math.round(v)))
-        const unsubscribeXProgress = scrollXProgress.onChange((v) => setCurrentXProgress(Math.round(v)))
-        return () => {
-            unsubscribeX()
-            unsubscribeXProgress()
-        }
-    }, [])
+        window.addEventListener('scroll', handleScroll);
 
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    });
 
     return (
-        <div>
-            <motion.div
-                style={{
-                    width: 1888,
-                    height: 375,
-                    backgroundImage: `url(${bg2})`,
-                    backgroundSize: '100% 100%',
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-                    scale: scale1,
-                }} />
-            {/* <motion.div
-                style={{
-                    width: 1888,
-                    height: 375,
-                    backgroundImage: `url(${bg1})`,
-                    backgroundSize: '100% 100%',
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-                    scale: scale1,
-                }} />
-            <motion.div
-                style={{
-                    width: 1888,
-                    height: 375,
-                    backgroundImage: `url(${bg0})`,
-                    backgroundSize: '100% 100%',
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-                }} /> */}
-            <p style={{
-                position: 'fixed'
-            }}>scrollX: {currentX}</p>
-        </div>
-    )
+        <motion.div
+            ref={ref}
+            style={{
+                background: 'red',
+                height: 100,
+                width: '300vw'
+            }}>Contents of your component</motion.div>)
 }
 
-export default Parallax
-
+export default Comp;
