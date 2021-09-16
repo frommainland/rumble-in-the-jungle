@@ -23,6 +23,10 @@ export default function Prologue() {
     const bg2Opacity = useTransform(scrollX, [0, 900], [.6, 1])
     const bg2Rotate = useTransform(scrollX, [0, 900], [1, 60])
 
+    // bg1 anim
+    const bg1Scale = useTransform(scrollX, [0, 400], [.7, 2])
+    const bg1Opacity = useTransform(scrollX, [0, 400], [.4, 1])
+    const bg1Left = useTransform(scrollX, [0, 400], [0, 100])
 
     // text anim
     const textScale = useTransform(scrollX, [0, 400], [1, 25])
@@ -37,26 +41,40 @@ export default function Prologue() {
 
     return (
         <div style={{
+            position: 'absolute',
             width: '100vw',
             height: '100vh',
         }}>
-            <motion.div
-                className='bg1'
+            <div
+                className='bg1Wrap'
                 style={{
                     width: '100vw',
                     height: '100vh',
-                    backgroundImage: `url(${bg1})`,
-                    backgroundSize: 'cover',
                     position: 'absolute',
                     left: 0,
                     top: 0,
-                    opacity: .4
-                }} />
+                }}>
+                <motion.div
+                    className='bg1'
+                    style={{
+                        width: '118vw',
+                        height: '142vh',
+                        backgroundImage: `url(${bg1})`,
+                        backgroundSize: 'auto auto',
+                        position: 'absolute',
+                        left: bg1Left,
+                        top: '-18%',
+                        opacity: bg1Scale,
+                        scale: bg1Opacity
+                    }} />
+            </div>
             <div
                 className='bg2Wrap'
                 style={{
                     width: '100vw',
-                    height: '100vh'
+                    height: '100vh',
+                    overflow: 'hidden',
+                    position: 'absolute',
                 }}>
                 <motion.div
                     className='bg2'
@@ -96,15 +114,16 @@ export default function Prologue() {
                 position: 'absolute',
                 left: 0,
                 top: 0,
-                width: '100%',
-                height: '100%',
+                width: '100vw',
+                height: '100vh',
                 display: "flex",
                 flexWrap: 'nowrap',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
                 scale: textScale,
-                originY: 0.25
+                originY: 0.25,
+                overflow: 'hidden'
             }}>
                 <h1 style={{
                     fontSize: 80,
