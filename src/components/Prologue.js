@@ -25,19 +25,19 @@ export default function Prologue() {
 
     // bg1 anim
     const bg1Scale = useTransform(scrollX, [0, 400], [.7, 2])
-    const bg1Opacity = useTransform(scrollX, [0, 400], [.4, 1])
-    const bg1Left = useTransform(scrollX, [0, 400], [0, 100])
+    const bg1Opacity = useTransform(scrollX, [0, 900], [0, 1])
+    const bg1Left = useTransform(scrollX, [0, 400], [0, 200])
 
     // text anim
     const textScale = useTransform(scrollX, [0, 400], [1, 25])
 
 
-    useEffect(() => {
-        const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()))
-        return () => {
-            unsubscribeX()
-        }
-    })
+    // useEffect(() => {
+    //     const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()))
+    //     return () => {
+    //         unsubscribeX()
+    //     }
+    // })
 
     return (
         <div style={{
@@ -62,8 +62,9 @@ export default function Prologue() {
                         backgroundImage: `url(${bg1})`,
                         backgroundSize: 'auto auto',
                         position: 'absolute',
-                        left: bg1Left,
+                        left: '5%',
                         top: '-18%',
+                        x: bg1Left,
                         opacity: bg1Scale,
                         scale: bg1Opacity
                     }} />
@@ -134,11 +135,11 @@ export default function Prologue() {
                     margin: 0
                 }}>In The Jungle</h3>
             </motion.div>
-            <h1
+            {/* <h1
                 style={{
                     position: "fixed",
                     color: 'white'
-                }}>{currentX}</h1>
+                }}>{currentX}</h1> */}
         </div>
     )
 }
