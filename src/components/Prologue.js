@@ -30,14 +30,15 @@ export default function Prologue() {
 
     // text anim
     const textScale = useTransform(scrollX, [0, 400], [1, 25])
+    const textLeft = useTransform(scrollX, [0, 400], [0, 400], { clamp: false })
 
 
-    // useEffect(() => {
-    //     const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()))
-    //     return () => {
-    //         unsubscribeX()
-    //     }
-    // })
+    useEffect(() => {
+        const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()))
+        return () => {
+            unsubscribeX()
+        }
+    })
 
     return (
         <div style={{
@@ -53,6 +54,7 @@ export default function Prologue() {
                     position: 'absolute',
                     left: 0,
                     top: 0,
+
                 }}>
                 <motion.div
                     className='bg1'
@@ -69,13 +71,14 @@ export default function Prologue() {
                         scale: bg1Opacity
                     }} />
             </div>
-            <div
+            <motion.div
                 className='bg2Wrap'
                 style={{
                     width: '100vw',
                     height: '100vh',
                     overflow: 'hidden',
                     position: 'absolute',
+                    x: textLeft
                 }}>
                 <motion.div
                     className='bg2'
@@ -93,53 +96,72 @@ export default function Prologue() {
                         scale: bg2Scale,
                         rotate: bg2Rotate
                     }} />
-            </div>
+            </motion.div>
             <motion.div
-                className='bg3'
+                className='bg3Wrap'
                 style={{
                     width: '100vw',
                     height: '100vh',
-                    backgroundImage: `url(${bg3})`,
-                    backgroundSize: 'cover',
+                    overflow: 'hidden',
+                    position: 'absolute',
+                    x: textLeft
+                }}>
+                <motion.div
+                    className='bg3'
+                    style={{
+                        width: '100vw',
+                        height: '100vh',
+                        backgroundImage: `url(${bg3})`,
+                        backgroundSize: 'cover',
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                        scale: bg3Scale,
+                        rotate: rotate,
+                        filter: bg3Filter
+                    }} />
+            </motion.div>
+            <motion.div
+                className='textOverflowWrap'
+                style={{
+                    color: 'white',
+                    fontFamily: 'CyrulikRounded',
                     position: 'absolute',
                     left: 0,
                     top: 0,
-                    scale: bg3Scale,
-                    rotate: rotate,
-                    filter: bg3Filter
-                }} />
-
-            <motion.div style={{
-                color: 'white',
-                fontFamily: 'CyrulikRounded',
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '100vw',
-                height: '100vh',
-                display: "flex",
-                flexWrap: 'nowrap',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                scale: textScale,
-                originY: 0.25,
-                overflow: 'hidden'
-            }}>
-                <h1 style={{
-                    fontSize: 80,
-                    margin: 0
-                }}>RUMBLE</h1>
-                <h3 style={{
-                    fontSize: 60,
-                    margin: 0
-                }}>In The Jungle</h3>
+                    width: '100vw',
+                    height: '100vh',
+                    overflow: 'hidden',
+                    x: textLeft
+                }}>
+                <motion.div
+                    className='textScaleAll'
+                    style={{
+                        width: '100vw',
+                        height: '100vh',
+                        display: "flex",
+                        flexWrap: 'nowrap',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        scale: textScale,
+                        originY: 0.25,
+                    }}>
+                    <motion.h1 style={{
+                        fontSize: 80,
+                        margin: 0,
+                    }}>RUMBLE</motion.h1>
+                    <motion.h3 style={{
+                        fontSize: 60,
+                        margin: 0,
+                    }}>In The Jungle</motion.h3>
+                </motion.div>
             </motion.div>
-            {/* <h1
+            <h1
                 style={{
                     position: "fixed",
                     color: 'white'
-                }}>{currentX}</h1> */}
+                }}>{currentX}</h1>
         </div>
     )
 }
