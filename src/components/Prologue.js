@@ -1,6 +1,7 @@
 import { motion, useViewportScroll, useTransform, useMotionTemplate } from "framer-motion";
 import { useEffect, useState } from "react";
 import '../font.css'
+import './Prologue.css'
 import bg1 from '../img/prologueBg1.svg'
 import bg2 from '../img/prologueBg2.svg'
 import bg3 from '../img/prologueBg3.svg'
@@ -22,6 +23,8 @@ export default function Prologue() {
     const bg2Scale = useTransform(scrollX, [0, 900], [1, 3])
     const bg2Opacity = useTransform(scrollX, [0, 900], [.6, 1])
     const bg2Rotate = useTransform(scrollX, [0, 900], [1, 60])
+    const filter2 = useTransform(scrollX, [0, 200, 700], [0, 0, 1])
+    const bg2Filter = useMotionTemplate`blur(${filter2}px)`
 
     // bg1 anim
     const bg1Scale = useTransform(scrollX, [0, 400], [.7, 2])
@@ -41,21 +44,9 @@ export default function Prologue() {
     })
 
     return (
-        <div style={{
-            position: 'absolute',
-            width: '100vw',
-            height: '100vh',
-        }}>
-            <div
-                className='bg1Wrap'
-                style={{
-                    width: '100vw',
-                    height: '100vh',
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-
-                }}>
+        <div>
+            {/* bg1 */}
+            {/* <div className='bgImgWrap'>
                 <motion.div
                     className='bg1'
                     style={{
@@ -64,48 +55,36 @@ export default function Prologue() {
                         backgroundImage: `url(${bg1})`,
                         backgroundSize: 'auto auto',
                         position: 'absolute',
-                        left: '5%',
+                        left: '-5%',
                         top: '-18%',
                         x: bg1Left,
                         opacity: bg1Scale,
                         scale: bg1Opacity
                     }} />
-            </div>
-            <motion.div
-                className='bg2Wrap'
-                style={{
-                    width: '100vw',
-                    height: '100vh',
-                    overflow: 'hidden',
-                    position: 'absolute',
-                    x: textLeft
-                }}>
+            </div> */}
+
+
+            {/* bg2 */}
+            <motion.div className='bgImgWrap'>
                 <motion.div
                     className='bg2'
                     style={{
                         width: '120vw',
-                        height: '120vh',
+                        height: '150vh',
                         backgroundImage: `url(${bg2})`,
                         backgroundSize: 'cover',
                         position: 'absolute',
-                        left: '50%',
-                        top: '50%',
-                        marginLeft: '-60vw',
-                        marginTop: '-60vh',
+                        left: '-9%',
+                        top: '-28%',
                         opacity: bg2Opacity,
                         scale: bg2Scale,
-                        rotate: bg2Rotate
+                        rotate: bg2Rotate,
+                        filter: bg2Filter
                     }} />
             </motion.div>
-            <motion.div
-                className='bg3Wrap'
-                style={{
-                    width: '100vw',
-                    height: '100vh',
-                    overflow: 'hidden',
-                    position: 'absolute',
-                    x: textLeft
-                }}>
+
+            {/* bg3 */}
+            <div className='bgImgWrap'>
                 <motion.div
                     className='bg3'
                     style={{
@@ -120,7 +99,9 @@ export default function Prologue() {
                         rotate: rotate,
                         filter: bg3Filter
                     }} />
-            </motion.div>
+            </div>
+
+
             <motion.div
                 className='textOverflowWrap'
                 style={{
@@ -157,11 +138,13 @@ export default function Prologue() {
                     }}>In The Jungle</motion.h3>
                 </motion.div>
             </motion.div>
+
+            {/* scrollX text output test */}
             <h1
                 style={{
                     position: "fixed",
                     color: 'white'
                 }}>{currentX}</h1>
-        </div>
+        </div >
     )
 }

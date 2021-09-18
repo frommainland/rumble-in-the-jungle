@@ -24,7 +24,7 @@ const Parallax = () => {
 
     return (
         <div style={{
-            marginLeft: '200vw',
+            marginLeft: '400vw',
             position: 'absolute',
         }}>
             <motion.div
