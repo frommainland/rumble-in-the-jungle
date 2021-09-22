@@ -7,7 +7,8 @@ import {
 import { useEffect, useState } from "react";
 import "../font.css";
 import "./Prologue.css";
-import bg1 from "../img/prologueBg1.svg";
+import bg1a from "../img/prologueBg1a.svg";
+import bg1b from "../img/prologueBg1b.svg";
 import bg2 from "../img/prologueBg2.svg";
 import bg3 from "../img/prologueBg3.svg";
 
@@ -30,10 +31,13 @@ export default function Prologue() {
     const bg2MaskOpacity = useTransform(scrollX, [0, 900], [0.3, 0]);
 
     // bg1 anim
-    const bg1Scale = useTransform(scrollX, [0, 900], [0.5, 1]);
+    const bg1AScale = useTransform(scrollX, [0, 300, 900], [0.5, 0.5, 1.2]);
+    const bg1BScale = useTransform(scrollX, [0, 900], [0.3, 1]);
     const bg1Opacity = useTransform(scrollX, [0, 900], [0, 1]);
     const bg1Left = useTransform(scrollX, [0, 400], [0, 200]);
     const bg1MaskOpacity = useTransform(scrollX, [0, 200, 900], [0.8, 0.3, 0]);
+    const bg1Arotate = useTransform(scrollX, [0, 900], [1, 10])
+    const bg1Brotate = useTransform(scrollX, [0, 900], [1, -10])
 
     // text anim
     const textScale = useTransform(scrollX, [0, 400], [1, 25]);
@@ -55,14 +59,29 @@ export default function Prologue() {
                 <motion.div
                     className="bg1"
                     style={{
-                        width: "118vw",
-                        height: "142vh",
-                        backgroundImage: `url(${bg1})`,
+                        width: "134vw",
+                        height: "175vh",
+                        backgroundImage: `url(${bg1a})`,
                         backgroundSize: "auto auto",
                         position: "absolute",
-                        left: "-5%",
-                        top: "-18%",
-                        scale: bg1Scale,
+                        left: "-15%",
+                        top: "-35%",
+                        scale: bg1AScale,
+                        rotate: bg1Arotate,
+                    }}
+                />
+                <motion.div
+                    className="bg1"
+                    style={{
+                        width: "134vw",
+                        height: "175vh",
+                        backgroundImage: `url(${bg1b})`,
+                        backgroundSize: "auto auto",
+                        position: "absolute",
+                        left: "-15%",
+                        top: "-35%",
+                        scale: bg1BScale,
+                        rotate: bg1Brotate,
                     }}
                 />
                 <motion.div
