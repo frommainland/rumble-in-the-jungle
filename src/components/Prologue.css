@@ -4,5 +4,9 @@
     position: fixed;
     overflow: hidden;
     left: 0;
-    top: 0
+    top: 0;
+}
+
+h1 {
+    margin: 0;
 }

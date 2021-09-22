@@ -5,6 +5,7 @@ import {
     useMotionTemplate,
 } from "framer-motion";
 import { useEffect, useState } from "react";
+import useWindowSize from "./useWindowSize";
 import "../font.css";
 import "./Prologue.css";
 import bg1a from "../img/prologueBg1a.svg";
@@ -13,6 +14,7 @@ import bg2 from "../img/prologueBg2.svg";
 import bg3 from "../img/prologueBg3.svg";
 
 export default function Prologue() {
+    const size = useWindowSize();
     const { scrollXProgress, scrollX } = useViewportScroll();
 
     const [currentX, setCurrentX] = useState(0);
@@ -24,20 +26,20 @@ export default function Prologue() {
     const bg3Filter = useMotionTemplate`blur(${filter}px)`;
 
     // bg2 anim
-    const bg2Scale = useTransform(scrollX, [0, 900], [1, 3], { clamp: false });
+    const bg2Scale = useTransform(scrollX, [0, 900], [1, 5], { clamp: false });
     const bg2Rotate = useTransform(scrollX, [0, 900], [1, 60]);
     const filter2 = useTransform(scrollX, [0, 200, 700], [0, 0, 1]);
     const bg2Filter = useMotionTemplate`blur(${filter2}px)`;
     const bg2MaskOpacity = useTransform(scrollX, [0, 900], [0.3, 0]);
 
     // bg1 anim
-    const bg1AScale = useTransform(scrollX, [0, 300, 900], [0.5, 0.5, 1.2]);
-    const bg1BScale = useTransform(scrollX, [0, 900], [0.3, 1]);
+    const bg1AScale = useTransform(scrollX, [0, 100, 900], [0.5, 0.5, 2.2]);
+    const bg1BScale = useTransform(scrollX, [0, 900], [0.3, 2]);
     const bg1Opacity = useTransform(scrollX, [0, 900], [0, 1]);
     const bg1Left = useTransform(scrollX, [0, 400], [0, 200]);
     const bg1MaskOpacity = useTransform(scrollX, [0, 200, 900], [0.8, 0.3, 0]);
-    const bg1Arotate = useTransform(scrollX, [0, 900], [1, 10])
-    const bg1Brotate = useTransform(scrollX, [0, 900], [1, -10])
+    const bg1Arotate = useTransform(scrollX, [0, 300, 900], [0, 0, 60]);
+    const bg1Brotate = useTransform(scrollX, [0, 300, 900], [0, 0, 60]);
 
     // text anim
     const textScale = useTransform(scrollX, [0, 400], [1, 25]);
@@ -148,6 +150,7 @@ export default function Prologue() {
                 />
             </div>
 
+            {/* rumble in jungle text */}
             <motion.div
                 className="textOverflowWrap"
                 style={{
@@ -195,14 +198,35 @@ export default function Prologue() {
                 </motion.div>
             </motion.div>
 
+            {/* good studio presents text */}
+            <motion.div
+                className="textOverflowWrap"
+                style={{
+                    color: "white",
+                    fontFamily: "CyrulikSharp",
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    width: "100vw",
+                    height: "100vh",
+                    overflow: "hidden",
+                    textAlign: "center",
+                    fontSize: 36,
+                }}
+            >
+                <p>Good studio</p>
+                <p>presents</p>
+            </motion.div>
+
             {/* scrollX text output test */}
             <h1
                 style={{
                     position: "fixed",
                     color: "white",
+                    fontSize: 16,
                 }}
             >
-                {currentX}
+                {currentX} - window.width {size.width}
             </h1>
         </div>
     );
