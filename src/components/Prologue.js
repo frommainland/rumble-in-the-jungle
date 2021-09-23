@@ -49,11 +49,7 @@ export default function Prologue() {
         clamp: false,
     });
 
-    // text 'good studio presents' anim
-    const text2Scale = useTransform(scrollX, [400, 900], [.9, 1]);
-    const text2Opacity = useTransform(scrollX, [400, 900], [0, 1], {
-        clamp: false,
-    });
+    // text 'good studio presents' anim, based on scrollx to trigger anim
     const [text2Anim, setText2Anim] = useState(false)
 
     useEffect(() => {
@@ -65,7 +61,7 @@ export default function Prologue() {
 
     useEffect(() => {
         scrollX.onChange((value) => {
-            if (value >= 800) {
+            if (value >= 600) {
                 setText2Anim(true)
             } else {
                 setText2Anim(false)
@@ -175,7 +171,7 @@ export default function Prologue() {
                 className="textOverflowWrap"
                 style={{
                     color: "white",
-                    fontFamily: "CyrulikRounded",
+                    fontFamily: "CyrulikSharpBold",
                     position: "absolute",
                     left: 0,
                     top: 0,
@@ -221,6 +217,10 @@ export default function Prologue() {
             {/* good studio presents text */}
             <motion.div
                 className='text-2ndTitle'
+                initial={{
+                    opacity: 0,
+                    scale: 0.8
+                }}
                 animate={{
                     opacity: text2Anim ? 1 : 0,
                     scale: text2Anim ? 1 : 0.8,

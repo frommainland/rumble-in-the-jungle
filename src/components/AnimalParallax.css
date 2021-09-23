@@ -1,0 +1,10 @@
+
+.animalBg {
+    width: 232vw;
+    height: 100vh;
+    background-size: cover;
+    position:absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+}
