@@ -200,18 +200,9 @@ export default function Prologue() {
 
             {/* good studio presents text */}
             <motion.div
-                className="textOverflowWrap"
+                className='text-2ndTitle'
                 style={{
-                    color: "white",
-                    fontFamily: "CyrulikSharp",
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    width: "100vw",
-                    height: "100vh",
-                    overflow: "hidden",
-                    textAlign: "center",
-                    fontSize: 36,
+                    opacity: 0
                 }}
             >
                 <p>Good studio</p>
@@ -228,6 +219,6 @@ export default function Prologue() {
             >
                 {currentX} - window.width {size.width}
             </h1>
-        </div>
+        </div >
     );
 }

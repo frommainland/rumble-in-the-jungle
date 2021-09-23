@@ -7763,6 +7763,11 @@
     "query-string" "^4.1.0"
     "sort-keys" "^1.0.0"
 
+"normalize.css@^8.0.1":
+  "integrity" "sha1-m5iiCHOLnMJjTKrLxC0THJdIe/M="
+  "resolved" "https://registry.npm.taobao.org/normalize.css/download/normalize.css-8.0.1.tgz"
+  "version" "8.0.1"
+
 "npm-run-path@^2.0.0":
   "integrity" "sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8="
   "resolved" "https://registry.npm.taobao.org/npm-run-path/download/npm-run-path-2.0.2.tgz"
