@@ -12,9 +12,11 @@ import bg1a from "../img/prologueBg1a.svg";
 import bg1b from "../img/prologueBg1b.svg";
 import bg2 from "../img/prologueBg2.svg";
 import bg3 from "../img/prologueBg3.svg";
+import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
 export default function Prologue() {
     const size = useWindowSize();
+    const smooth = [0.4, 0, 0, 1]
     const { scrollXProgress, scrollX } = useViewportScroll();
 
     const [currentX, setCurrentX] = useState(0);
@@ -47,12 +49,30 @@ export default function Prologue() {
         clamp: false,
     });
 
+    // text 'good studio presents' anim
+    const text2Scale = useTransform(scrollX, [400, 900], [.9, 1]);
+    const text2Opacity = useTransform(scrollX, [400, 900], [0, 1], {
+        clamp: false,
+    });
+    const [text2Anim, setText2Anim] = useState(false)
+
     useEffect(() => {
         const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()));
         return () => {
             unsubscribeX();
         };
     });
+
+    useEffect(() => {
+        scrollX.onChange((value) => {
+            if (value >= 800) {
+                setText2Anim(true)
+            } else {
+                setText2Anim(false)
+            }
+        });
+    }, [scrollX]);
+
 
     return (
         <div>
@@ -201,13 +221,20 @@ export default function Prologue() {
             {/* good studio presents text */}
             <motion.div
                 className='text-2ndTitle'
-                style={{
-                    opacity: 0
+                animate={{
+                    opacity: text2Anim ? 1 : 0,
+                    scale: text2Anim ? 1 : 0.8,
+                }}
+                transition={{
+                    ease: smooth,
+                    duration: 2,
                 }}
             >
                 <p>Good studio</p>
                 <p>presents</p>
             </motion.div>
+
+
 
             {/* scrollX text output test */}
             <h1
