@@ -1,0 +1,8 @@
+
+  
+.swiper-slide:nth-child(n) {
+    width: 60%;
+    background-color: 'red';
+  }
+
+

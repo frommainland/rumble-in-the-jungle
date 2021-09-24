@@ -1,12 +1,13 @@
 import "./App.css";
 import Prologue from "./components/Prologue";
-
+import AnimalDetails from './components/AnimalDetails'
 import AnimalParallax from "./components/AnimalParallax";
 
 function App() {
     return (
         <div className="App">
-            <AnimalParallax />
+            {/* <AnimalParallax /> */}
+            <AnimalDetails />
             {/* <Prologue /> */}
         </div>
     );
