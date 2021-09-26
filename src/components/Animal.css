@@ -1,0 +1,84 @@
+.animal-wrap {
+    color: white;
+}
+
+.animal-title {
+    font-family: "CyrulikSharpBold", sans-serif;
+    font-size: 11vw;
+}
+
+.animal-quotes {
+    font-family: 'PublicoItalic', serif;
+    font-size: 2.2vw;
+    line-height: 1.33;
+    padding-left: 1em;
+    border-left: 0.2em solid white;
+    width: 65%;
+}
+
+
+.animal-sound {
+    width: 24vw;
+    height: 5vw;
+    border: 1px solid white;
+    border-radius: 5vw;
+}
+
+.animal-illustration{
+    background-image: url(../img/animal-elephant.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 46vw;
+    height: 46vw;
+    margin: 0 auto;
+}
+
+.animal-metrics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.5vw;
+    width: 54vw;
+    margin: 0 auto;
+}
+
+.animal-metrics-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animal-metric-item-number {
+    font-family: "CyrulikSharpBold", sans-serif;
+    font-size: 4.4vw;
+    line-height: 1;
+
+}
+.animal-metric-item-number div:nth-child(1) {
+    margin-right: .7vw;
+    margin-bottom: .7vw;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.animal-metric-item-number div:nth-child(2) {
+    font-size: 2vw;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.animal-metrics-item p {
+    font-family: "PublicoRoman", serif;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.animal-essay {
+    width: 55vw;
+font-family: "PublicoRoman", serif;
+font-size: 2.2vw;
+line-height: 1.33;
+margin: 0 auto;
+}

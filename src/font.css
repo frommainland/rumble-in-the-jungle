@@ -12,3 +12,13 @@
     font-family: 'CyrulikSharpBold';
     src: url('./font/Cyrulik-SharpBold.otf') format('opentype')
 }
+
+@font-face {
+    font-family: 'PublicoItalic';
+    src: url('./font/PublicoText-Italic.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'PublicoRoman';
+    src: url('./font/PublicoText-Roman.otf') format('opentype')
+}

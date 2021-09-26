@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './swiper-bundle.css'
 import './AnimalDetails.css'
 
+
+import Animal from './Animal';
+
 const AnimalDetails = () => {
     return (
         <Swiper
@@ -15,21 +18,11 @@ const AnimalDetails = () => {
             onSwiper={(swiper) => console.log(swiper)}
         >
             <SwiperSlide>
-                <div style={{
-                    color: 'white',
-                    fontSize: 30,
-                    backgroundColor: 'red',
-                    width: '20vw',
-                    height: '200vh'
-
-                }}>Slide 1</div>
+                <Animal />
             </SwiperSlide>
-            <SwiperSlide>                <div style={{
-                color: 'white',
-                fontSize: 30,
-                backgroundColor: 'green',
-                width: '40vw'
-            }}>Slide 2</div></SwiperSlide>
+            <SwiperSlide>
+                <Animal />
+            </SwiperSlide>
             <SwiperSlide>Slide 3</SwiperSlide>
             <SwiperSlide>Slide 4</SwiperSlide>
         </Swiper>
