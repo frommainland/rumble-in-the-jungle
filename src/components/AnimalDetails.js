@@ -12,7 +12,7 @@ import Animal from './Animal';
 const AnimalDetails = () => {
     return (
         <Swiper
-            spaceBetween={50}
+            spaceBetween={10}
             slidesPerView={'auto'}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
