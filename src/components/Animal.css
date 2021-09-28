@@ -1,6 +1,7 @@
 .animal-wrap {
     color: white;
     height: 100%;
+    margin-left: 6vw;
 }
 
 .animal-title {
@@ -9,10 +10,11 @@
     margin-bottom: 5vw;
     margin-top: 10vw;
     -webkit-transform-origin-x: 0;
+    z-index: 100;
 }
 
 .animal-quotes {
-    font-family: 'PublicoItalic', serif;
+    font-family: "PublicoItalic", serif;
     font-size: 2.2vw;
     line-height: 1.33;
     padding-left: 1em;
@@ -20,7 +22,6 @@
     width: 65%;
     margin-bottom: 3vw;
 }
-
 
 .animal-speech {
     width: 24vw;
@@ -30,7 +31,7 @@
     margin-bottom: 3vw;
 }
 
-.animal-illustration{
+.animal-illustration {
     background-image: url(../img/animal-elephant.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -61,11 +62,10 @@
     font-family: "CyrulikSharpBold", sans-serif;
     font-size: 4.4vw;
     line-height: 1;
-
 }
 .animal-metric-item-number div:nth-child(1) {
-    margin-right: .7vw;
-    margin-bottom: .7vw;
+    margin-right: 0.7vw;
+    margin-bottom: 0.7vw;
     vertical-align: top;
     display: inline-block;
 }
@@ -85,11 +85,11 @@
 
 .animal-essay {
     width: 55vw;
-font-family: "PublicoRoman", serif;
-font-size: 2.2vw;
-line-height: 1.33;
-margin: 0 auto;
-margin-bottom: 3.7vw;
+    font-family: "PublicoRoman", serif;
+    font-size: 2.2vw;
+    line-height: 1.33;
+    margin: 0 auto;
+    margin-bottom: 3.7vw;
 }
 .animal-images {
     width: 90%;
@@ -103,10 +103,9 @@ margin-bottom: 3.7vw;
     margin-bottom: 1vw;
 }
 
-.animal-images .animal-images-item:nth-last-child(1){
+.animal-images .animal-images-item:nth-last-child(1) {
     margin-bottom: 4vw;
 }
-
 
 .animal-sound {
     margin-bottom: 7vw;
@@ -121,8 +120,8 @@ margin-bottom: 3.7vw;
     margin: 0 auto;
 }
 
-.animal-sound p{
-    font-family:'PublicoRoman', serif;
+.animal-sound p {
+    font-family: "PublicoRoman", serif;
     font-size: 1.7vw;
     text-align: center;
 }
