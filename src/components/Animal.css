@@ -1,11 +1,14 @@
 .animal-wrap {
     color: white;
+    height: 100%;
 }
 
 .animal-title {
     font-family: "CyrulikSharpBold", sans-serif;
     font-size: 11vw;
     margin-bottom: 5vw;
+    margin-top: 10vw;
+    -webkit-transform-origin-x: 0;
 }
 
 .animal-quotes {

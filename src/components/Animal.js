@@ -1,12 +1,18 @@
 
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
+import useWindowSize from "./useWindowSize";
 import './Animal.css'
 import elephant1 from '../img/AnimalDetail-elephant-1.png'
 import elephant2 from '../img/AnimalDetail-elephant-2.png'
 import elephant3 from '../img/AnimalDetail-elephant-3.png'
 
 const Animal = () => {
+
+    const smooth = [0.4, 0, 0, 1]
+    const { scrollYProgress, scrollY } = useViewportScroll();
+
+    // test
     const [currentY, setCurrentY] = useState(0);
     useEffect(() => {
         const unsubscribeY = scrollY.onChange((v) => setCurrentY(v.toFixed()));
@@ -14,15 +20,26 @@ const Animal = () => {
             unsubscribeY();
         };
     });
+    const testY = useTransform(
+        scrollY,
+        [0, 100],
+        [0, 100],
+        { clamp: false }
+    )
 
-    const smooth = [0.4, 0, 0, 1]
-    const { scrollYProgress, scrollY } = useViewportScroll();
+    // test
 
+    const size = useWindowSize();
+
+
+    // text title anim
     const [titleAnim, setTitleAnim] = useState(false)
+    const titleY = useTransform(scrollY, [0, 100], [0, 1], { clamp: false })
+    const scaleY = useTransform(scrollY, [0, 100], [1, .5])
 
     useEffect(() => {
         scrollY.onChange((value) => {
-            if (value >= 600) {
+            if (value >= size.width / 10) {
                 setTitleAnim(true)
             } else {
                 setTitleAnim(false)
@@ -33,17 +50,25 @@ const Animal = () => {
 
     return (
         <div className='animal-wrap'>
-            <section style={{
-                position: 'fixed',
-                color: 'white',
-                top: 0,
-                left: 0
-            }}>
+            <motion.section
+                style={{
+                    position: 'absolute',
+                    color: 'red',
+                    top: testY,
+                    left: 0
+                }}>
                 {currentY}
-            </section>
-            <h1 className='animal-title'>
+            </motion.section>
+            <motion.h1
+                className='animal-title'
+                style={{
+                    top: testY,
+                    position: 'relative',
+                    scale: scaleY
+                }}
+            >
                 ELEPHANT
-            </h1>
+            </motion.h1>
             <p className='animal-quotes'>
                 “It’s great to be an elephant. All big and fat and round, and wander through the jungle just elephing around.”
             </p>
