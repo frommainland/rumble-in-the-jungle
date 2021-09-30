@@ -1,7 +1,11 @@
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
+// import { useInView, InView } from 'react-intersection-observer';
+
+import { useRef } from "react";
 import useInView from "react-cool-inview";
+
 import "./Animal.css";
 import elephant1 from "../img/AnimalDetail-elephant-1.png";
 import elephant2 from "../img/AnimalDetail-elephant-2.png";
@@ -49,6 +53,9 @@ const Animal = () => {
         // Shrink the root margin, so the animation will be triggered once the target reach a fixed amount of visible
         rootMargin: "-100px 0px",
     });
+
+    const ref = useRef()
+    // const { observe } = useInView();
 
     return (
         <div className="animal-wrap">
@@ -110,31 +117,61 @@ const Animal = () => {
                 tree bark.
             </section>
 
-            <div className="animal-images">
-                <motion.img
-                    src={elephant1}
-                    className="animal-images-item"
-                    style={{
-                        rotate: 5,
-                    }}
-                    animate={{
-                        opacity: inView ? 1 : 0,
-                    }}
-                    ref={observe}
-                />
-                <motion.img
-                    src={elephant2}
-                    className="animal-images-item"
-                    style={{
-                        rotate: -2,
-                    }}
-                />
+            <div
+                className="animal-images"
+            >
+                {/* <InView threshold={0.25}>
+                    {({ inView, ref, entry }) => (
+                        <motion.img
+                            src={elephant1}
+                            className="animal-images-item"
+                            style={{
+                                rotate: 5,
+                            }}
+                            animate={{
+                                opacity: inView ? 1 : 0,
+                            }}
+                            ref={ref}
+                        />)}
+                </InView>
+                <InView threshold={0.25} triggerOnce={true}>
+                    {({ inView, ref, entry }) => (
+                        <motion.img
+                            src={elephant2}
+                            className="animal-images-item"
+                            style={{
+                                rotate: -2,
+                            }}
+                            animate={{
+                                opacity: inView ? 1 : 0,
+                            }}
+                            ref={ref}
+                        />)}
+                </InView> */}
                 <motion.img
                     src={elephant3}
                     className="animal-images-item"
                     style={{
                         rotate: 0,
                     }}
+                    animate={{
+                        opacity: inView ? 1 : 0,
+                    }}
+                    ref={(el) => {
+                        observe(el); // Set the target element for monitoring
+                        ref.current = el; // Share the element for other purposes
+                    }}
+                />
+                <motion.img
+                    src={elephant2}
+                    className="animal-images-item"
+                    style={{
+                        rotate: 2,
+                    }}
+                    animate={{
+                        opacity: inView ? 1 : 0,
+                    }}
+                    ref={observe}
                 />
             </div>
 
