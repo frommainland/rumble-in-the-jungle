@@ -1,14 +1,13 @@
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
+import { useInView, InView } from "react-intersection-observer";
 import Animal_img from "./Animal_img";
 
-// all the animal images import here first, and then pass through props
-import elephant1 from "../img/AnimalDetail-elephant1.png";
-import elephant2 from "../img/AnimalDetail-elephant2.png";
-import elephant3 from "../img/AnimalDetail-elephant3.png";
-
 import "./Animal.css";
+import elephant1 from "../img/AnimalDetail-elephant-1.png";
+import elephant2 from "../img/AnimalDetail-elephant-2.png";
+import elephant3 from "../img/AnimalDetail-elephant-3.png";
 
 const Animal = () => {
     const smooth = [0.4, 0, 0, 1];
@@ -107,9 +106,47 @@ const Animal = () => {
             </section>
 
             <div className="animal-images">
-                <Animal_img name={elephant1} />
-                <Animal_img name={elephant2} />
-                <Animal_img name={elephant3} />
+                <InView rootMargin="-100px 0px">
+                    {({ inView, ref, entry }) => (
+                        <motion.img
+                            src={elephant1}
+                            className="animal-images-item"
+                            animate={{
+                                opacity: inView ? 1 : 0,
+                                scale: inView ? 1 : 0.8,
+                                rotate: inView ? 5 : 0,
+                            }}
+                            transition={{
+                                ease: smooth,
+                                duration: 0.75,
+                            }}
+                            ref={ref}
+                        />
+                    )}
+                </InView>
+                <InView threshold={0.25}>
+                    {({ inView, ref, entry }) => (
+                        <motion.img
+                            src={elephant2}
+                            className="animal-images-item"
+                            style={{
+                                rotate: -2,
+                            }}
+                            animate={{
+                                opacity: inView ? 1 : 0,
+                            }}
+                            ref={ref}
+                        />
+                    )}
+                </InView>
+                <motion.img
+                    src={elephant3}
+                    className="animal-images-item"
+                    style={{
+                        rotate: 0,
+                    }}
+                />
+                <Animal_img />
             </div>
 
             <section className="animal-essay">

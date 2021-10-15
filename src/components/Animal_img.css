@@ -1,0 +1,11 @@
+.animal-images-item {
+    object-fit: contain;
+    width: 74vw;
+    height: 42vw;
+    border-radius: 8px;
+    margin-bottom: 1vw;
+}
+
+.animal-images-item:nth-last-child(1) {
+    margin-bottom: 4vw;
+}
