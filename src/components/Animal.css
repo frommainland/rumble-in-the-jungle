@@ -5,7 +5,7 @@
 }
 
 .animal-title {
-    font-family: "CyrulikSharpBold", sans-serif;
+    font-family: "MagnatHead-ExtraBold", sans-serif;
     font-size: 11vw;
     margin-bottom: 5vw;
     margin-top: 10vw;
@@ -14,7 +14,7 @@
 }
 
 .animal-quotes {
-    font-family: "PublicoItalic", serif;
+    font-family: "Metropolis-Medium", serif;
     font-size: 2.2vw;
     line-height: 1.33;
     padding-left: 1em;
@@ -41,51 +41,9 @@
     margin-bottom: 6vw;
 }
 
-.animal-metrics {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5.5vw;
-    width: 54vw;
-    margin: 0 auto;
-    margin-bottom: 5vw;
-}
-
-.animal-metrics-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.animal-metric-item-number {
-    font-family: "CyrulikSharpBold", sans-serif;
-    font-size: 4.4vw;
-    line-height: 1;
-}
-.animal-metric-item-number div:nth-child(1) {
-    margin-right: 0.7vw;
-    margin-bottom: 0.7vw;
-    vertical-align: top;
-    display: inline-block;
-}
-
-.animal-metric-item-number div:nth-child(2) {
-    font-size: 2vw;
-    vertical-align: top;
-    display: inline-block;
-}
-
-.animal-metrics-item p {
-    font-family: "PublicoRoman", serif;
-    font-size: 1.4vw;
-    text-transform: uppercase;
-    margin: 0;
-}
-
 .animal-essay {
     width: 55vw;
-    font-family: "PublicoRoman", serif;
+    font-family: "Metropolis-Medium", serif;
     font-size: 2.2vw;
     line-height: 1.33;
     margin: 0 auto;
@@ -111,7 +69,7 @@
 }
 
 .animal-sound p {
-    font-family: "PublicoRoman", serif;
+    font-family: "MagnatHead-ExtraBold", serif;
     font-size: 1.7vw;
     text-align: center;
 }

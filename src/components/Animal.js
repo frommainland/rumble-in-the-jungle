@@ -2,6 +2,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
 import Animal_img from "./Animal_img";
+import Animal_metric from "./Animal_metric";
 
 // all the animal images import here first, and then pass through props
 import elephant1 from "../img/AnimalDetail-elephant1.png";
@@ -10,7 +11,7 @@ import elephant3 from "../img/AnimalDetail-elephant3.png";
 
 import "./Animal.css";
 
-const Animal = () => {
+const Animal = (props) => {
     const smooth = [0.4, 0, 0, 1];
     const { scrollYProgress, scrollY } = useViewportScroll();
 
@@ -66,59 +67,42 @@ const Animal = () => {
                     scale: scaleY,
                 }}
             >
-                ELEPHANT
+                {props.title}
             </motion.h1>
-            <p className="animal-quotes">
-                “It’s great to be an elephant. All big and fat and round, and
-                wander through the jungle just elephing around.”
-            </p>
+
+            <p className="animal-quotes">{props.animal_quotes}</p>
+
             <div className="animal-speech"></div>
 
             <div className="animal-illustration"></div>
 
             <section className="animal-metrics">
-                <div className="animal-metrics-item">
-                    <div className="animal-metric-item-number">
-                        <div>2-5</div>
-                        <div>tons</div>
-                    </div>
-                    <p>weight</p>
-                </div>
-                <div className="animal-metrics-item">
-                    <div className="animal-metric-item-number">
-                        <div>8-10</div>
-                        <div>feet</div>
-                    </div>
-                    <p>height</p>
-                </div>
-                <div className="animal-metrics-item">
-                    <div className="animal-metric-item-number">
-                        <div>60-70</div>
-                        <div>years</div>
-                    </div>
-                    <p>life span</p>
-                </div>
+                <Animal_metric
+                    quantity={props.animal_metrics.left.quantity}
+                    unit={props.animal_metrics.left.unit}
+                    prop={props.animal_metrics.left.prop}
+                />
+                <Animal_metric
+                    quantity={props.animal_metrics.middle.quantity}
+                    unit={props.animal_metrics.middle.unit}
+                    prop={props.animal_metrics.middle.prop}
+                />
+                <Animal_metric
+                    quantity={props.animal_metrics.right.quantity}
+                    unit={props.animal_metrics.right.unit}
+                    prop={props.animal_metrics.right.prop}
+                />
             </section>
 
-            <section className="animal-essay">
-                African forest elephants live in family groups of up to 20
-                individuals and forage on leaves, grasses, seeds, fruit, and
-                tree bark.
-            </section>
+            <section className="animal-essay">{props.animal_essay_top}</section>
 
             <div className="animal-images">
-                <Animal_img name={elephant1} />
-                <Animal_img name={elephant2} />
-                <Animal_img name={elephant3} />
+                <Animal_img name={props.img.img1} />
+                <Animal_img name={props.img.img2} />
+                <Animal_img name={props.img.img3} />
             </div>
 
-            <section className="animal-essay">
-                Since the diet of forest elephants is dominated by fruit, they
-                play a crucial role in dispersing many tree species,
-                particularly the seeds of large trees which tend to have high
-                carbon content. They are therefore referred to as the
-                'mega-gardener of the forest'.
-            </section>
+            <section className="animal-essay">{props.animal_essay_bot}</section>
 
             <section className="animal-sound">
                 <div></div>

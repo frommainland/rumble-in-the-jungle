@@ -1,24 +1,19 @@
 @font-face {
-    font-family: 'CyrulikRounded';
-    src: url('./font/Cyrulik-Rounded.otf') format('opentype')
+    font-family: "Metropolis-Black";
+    src: url("./font/Metropolis-Black.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'CyrulikSharp';
-    src: url('./font/Cyrulik-Sharp.otf') format('opentype')
+    font-family: "Metropolis-Medium";
+    src: url("./font/Metropolis-Medium.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'CyrulikSharpBold';
-    src: url('./font/Cyrulik-SharpBold.otf') format('opentype')
+    font-family: "MagnatHead-ExtraBold";
+    src: url("./font/MagnatHead-ExtraBold.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'PublicoItalic';
-    src: url('./font/PublicoText-Italic.otf') format('opentype')
-}
-
-@font-face {
-    font-family: 'PublicoRoman';
-    src: url('./font/PublicoText-Roman.otf') format('opentype')
+    font-family: "MagnatHead-Medium";
+    src: url("./font/MagnatHead-Medium.otf") format("opentype");
 }

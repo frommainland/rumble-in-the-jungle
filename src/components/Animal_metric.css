@@ -1,0 +1,42 @@
+.animal-metrics-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animal-metrics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.5vw;
+    width: 54vw;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+}
+
+.animal-metrics-item p {
+    font-family: "Metropolis-Medium", serif;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.animal-metric-item-number {
+    line-height: 1;
+    display: flex;
+}
+
+.animal-metric-item-number div:nth-child(1) {
+    font-size: 4.4vw;
+    margin-right: 0.7vw;
+    margin-bottom: 0.7vw;
+    font-family: "MagnatHead-ExtraBold", serif;
+    white-space: nowrap;
+}
+
+.animal-metric-item-number div:nth-child(2) {
+    font-size: 2vw;
+    vertical-align: top;
+    font-family: "Metropolis-Black", sans-serif;
+}
