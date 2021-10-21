@@ -49,7 +49,9 @@ const Animal = (props) => {
 
     return (
         <div className="animal-wrap">
-            <motion.section
+            
+            {/* show scrollY num */}
+            {/* <motion.section
                 style={{
                     position: "absolute",
                     color: "red",
@@ -58,12 +60,12 @@ const Animal = (props) => {
                 }}
             >
                 {currentY}
-            </motion.section>
+            </motion.section> */}
+
             <motion.h1
                 className="animal-title"
                 style={{
                     top: titleY,
-                    position: "relative",
                     scale: scaleY,
                 }}
             >

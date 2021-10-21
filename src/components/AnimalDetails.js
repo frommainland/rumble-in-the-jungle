@@ -15,7 +15,8 @@ const AnimalDetails = () => {
             spaceBetween={10}
             slidesPerView={"auto"}
             onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => window.scrollTo(0, 0)}
+            // onSwiper={(swiper) => console.log(swiper)}
         >
             <SwiperSlide>
                 <Animal
@@ -37,8 +38,46 @@ const AnimalDetails = () => {
                     img={Animal_data.tiger.img}
                 />
             </SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>
+                <Animal
+                    title={Animal_data.monkey.title}
+                    animal_quotes={Animal_data.monkey.animal_quotes}
+                    animal_essay_top={Animal_data.monkey.animal_essay_top}
+                    animal_essay_bot={Animal_data.monkey.animal_essay_bot}
+                    animal_metrics={Animal_data.monkey.animal_metrics}
+                    img={Animal_data.monkey.img}
+                />
+            </SwiperSlide>
+            <SwiperSlide>
+                <Animal
+                    title={Animal_data.giraffe.title}
+                    animal_quotes={Animal_data.giraffe.animal_quotes}
+                    animal_essay_top={Animal_data.giraffe.animal_essay_top}
+                    animal_essay_bot={Animal_data.giraffe.animal_essay_bot}
+                    animal_metrics={Animal_data.giraffe.animal_metrics}
+                    img={Animal_data.giraffe.img}
+                />
+            </SwiperSlide>
+            <SwiperSlide>
+                <Animal
+                    title={Animal_data.crocodile.title}
+                    animal_quotes={Animal_data.crocodile.animal_quotes}
+                    animal_essay_top={Animal_data.crocodile.animal_essay_top}
+                    animal_essay_bot={Animal_data.crocodile.animal_essay_bot}
+                    animal_metrics={Animal_data.crocodile.animal_metrics}
+                    img={Animal_data.crocodile.img}
+                />
+            </SwiperSlide>
+            <SwiperSlide>
+                <Animal
+                    title={Animal_data.toucan.title}
+                    animal_quotes={Animal_data.toucan.animal_quotes}
+                    animal_essay_top={Animal_data.toucan.animal_essay_top}
+                    animal_essay_bot={Animal_data.toucan.animal_essay_bot}
+                    animal_metrics={Animal_data.toucan.animal_metrics}
+                    img={Animal_data.toucan.img}
+                />
+            </SwiperSlide>
         </Swiper>
     );
 };
