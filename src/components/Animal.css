@@ -6,13 +6,15 @@
 
 .animal-title {
     font-family: "MagnatHead-ExtraBold", sans-serif;
-    font-size: 11vw;
+    /* font-size: 11vw; */
+    font-size: 0;
     margin-bottom: 5vw;
     margin-top: 10vw;
     -webkit-transform-origin-x: 0;
     z-index: 100;
     position: relative;
 }
+
 
 .animal-quotes {
     font-family: "Metropolis-Medium", serif;

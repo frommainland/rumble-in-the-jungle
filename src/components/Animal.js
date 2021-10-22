@@ -4,11 +4,6 @@ import useWindowSize from "./useWindowSize";
 import Animal_img from "./Animal_img";
 import Animal_metric from "./Animal_metric";
 
-// all the animal images import here first, and then pass through props
-import elephant1 from "../img/AnimalDetail-elephant1.png";
-import elephant2 from "../img/AnimalDetail-elephant2.png";
-import elephant3 from "../img/AnimalDetail-elephant3.png";
-
 import "./Animal.css";
 
 const Animal = (props) => {
@@ -49,7 +44,6 @@ const Animal = (props) => {
 
     return (
         <div className="animal-wrap">
-            
             {/* show scrollY num */}
             {/* <motion.section
                 style={{
@@ -71,6 +65,8 @@ const Animal = (props) => {
             >
                 {props.title}
             </motion.h1>
+
+            
 
             <p className="animal-quotes">{props.animal_quotes}</p>
 
