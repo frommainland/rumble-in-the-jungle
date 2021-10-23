@@ -23,9 +23,9 @@ export default function Animal_title(props) {
         "#FA5F1D",
     ];
 
-    // const string = Array.from(animalName[props.currentPage]);
+    const string = Array.from(animalName_data[0]);
 
-    const [name, setName] = useState(Array.from(animalName_data[0]));
+    const [name, setName] = useState(string);
 
     let animalName = Array.from(animalName_data[props.currentPage]);
 
