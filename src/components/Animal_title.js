@@ -23,15 +23,15 @@ export default function Animal_title(props) {
         "#FA5F1D",
     ];
 
-    const string = Array.from(animalName_data[0]);
+    // const string = Array.from(animalName_data[0]);
 
-    const [name, setName] = useState(string);
+    // const [name, setName] = useState(string);
 
     let animalName = Array.from(animalName_data[props.currentPage]);
 
-    useEffect(() => {
-        setName(animalName);
-    }, [props.currentPage]);
+    // useEffect(() => {
+    //     setName(animalName);
+    // }, [props.currentPage]);
 
     return (
         <motion.div
@@ -55,13 +55,13 @@ export default function Animal_title(props) {
             //     staggerChildren: 0.1,
             // }}
         >
-            {name.map((item, i) => (
+            {animalName.map((item, i) => (
                 <motion.div
                     className="animal-title-item"
                     style={{
                         color: color[i%7],
                     }}
-                    key={`${name}${i}`}
+                    key={`${animalName}${i}`}
                     variants={{
                         initial: {
                             y: "12vw",
