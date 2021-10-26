@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
 import Animal_img from "./Animal_img";
 import Animal_metric from "./Animal_metric";
+import Animal_kidRead from "./Animal_kidRead";
 
 import "./Animal.css";
 
@@ -70,7 +71,8 @@ const Animal = (props) => {
 
             <p className="animal-quotes">{props.animal_quotes}</p>
 
-            <div className="animal-speech"></div>
+            {/* kid read animal-quotes with sound*/}
+            <Animal_kidRead />
 
             <div className="animal-illustration"></div>
 

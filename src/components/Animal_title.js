@@ -1,9 +1,18 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react/cjs/react.development";
 import "./Animal_title.css";
 
 export default function Animal_title(props) {
     const smooth = [0.4, 0, 0, 1];
+
+    //reverse cubic-bezier 
+    // from
+    // x1, y1, x2, y2
+    // to 
+    // (1 - x2), (1 - y2), (1 - x1), (1 - y1)
+
+    const smooth_reverse = [1 - 0, 1 - 1, 1 - 0.4, 1 - 0];
+    
     const animalName_data = [
         "Elephant",
         "Tiger",
@@ -26,6 +35,7 @@ export default function Animal_title(props) {
     // const string = Array.from(animalName_data[0]);
 
     // const [name, setName] = useState(string);
+    // console.log(name)
 
     let animalName = Array.from(animalName_data[props.currentPage]);
 
@@ -55,31 +65,43 @@ export default function Animal_title(props) {
             //     staggerChildren: 0.1,
             // }}
         >
-            {animalName.map((item, i) => (
-                <motion.div
-                    className="animal-title-item"
-                    style={{
-                        color: color[i%7],
-                    }}
-                    key={`${animalName}${i}`}
-                    variants={{
-                        initial: {
-                            y: "12vw",
-                        },
-                        start: {
-                            y: 0,
-                            transition: {
-                                duration: 0.35,
-                                ease: [0.34, 0.3, 0.1, 1],
-                                delay: 0.1 * i,
+            <AnimatePresence>
+                {animalName.map((item, i) => (
+                    <motion.div
+                        className="animal-title-item"
+                        style={{
+                            color: color[i % 7],
+                        }}
+                        key={`${animalName}${i}`}
+                        variants={{
+                            initial: {
+                                y: "13vw",
                             },
-                        },
-                    }}
-                    onClick={() => console.log(`${name}${i}`)}
-                >
-                    {item}
-                </motion.div>
-            ))}
+                            start: {
+                                y: 0,
+                                transition: {
+                                    duration: 0.8,
+                                    ease: smooth,
+                                    delay:
+                                        0.05 * i +
+                                        animalName.length * 0.05 +
+                                        0.45,
+                                },
+                            },
+                        }}
+                        onClick={() => console.log(`${animalName}${i}`)}
+                        exit={{
+                            y: "13vw",
+                            transition: {
+                                delay: 0.05 * i,
+                                ease: smooth_reverse,
+                            },
+                        }}
+                    >
+                        {item}
+                    </motion.div>
+                ))}
+            </AnimatePresence>
         </motion.div>
     );
 }

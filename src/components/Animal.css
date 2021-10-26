@@ -27,13 +27,6 @@
     white-space: pre-wrap;
 }
 
-.animal-speech {
-    width: 24vw;
-    height: 5vw;
-    border: 1px solid white;
-    border-radius: 5vw;
-    margin-bottom: 3vw;
-}
 
 .animal-illustration {
     background-image: url(../img/animal-elephant.svg);
