@@ -5,14 +5,14 @@ import "./Animal_title.css";
 export default function Animal_title(props) {
     const smooth = [0.4, 0, 0, 1];
 
-    //reverse cubic-bezier 
+    //reverse cubic-bezier
     // from
     // x1, y1, x2, y2
-    // to 
+    // to
     // (1 - x2), (1 - y2), (1 - x1), (1 - y1)
 
     const smooth_reverse = [1 - 0, 1 - 1, 1 - 0.4, 1 - 0];
-    
+
     const animalName_data = [
         "Elephant",
         "Tiger",
@@ -49,14 +49,16 @@ export default function Animal_title(props) {
             variants={{
                 initial: {},
                 start: {
-                    scale: props.offset > 50 ? 0.5 : 1,
-                    originX: 0,
-                    originY: 0,
+                    scale: props.offset > 50 ? 0.6 : 1,
                     transition: {
-                        duration: 1,
-                        ease: smooth,
+                        duration: 0.3,
+                        ease: props.offset < 50 ? smooth : smooth_reverse,
                     },
                 },
+            }}
+            style={{
+                originX: 0,
+                originY: 0,
             }}
             initial="initial"
             animate="start"

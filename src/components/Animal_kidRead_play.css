@@ -1,0 +1,26 @@
+
+.play {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.play-outsideShape {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50%;
+    margin-top: -50%;
+}
+
+.play-insideShape {
+    width: 3.6vw;
+    height: 3.6vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.8vw;
+    margin-top: -1.8vw;
+}

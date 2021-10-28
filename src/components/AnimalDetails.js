@@ -8,7 +8,7 @@ import "./AnimalDetails.css";
 import Animal_data from "./Animal_data";
 import Animal_title from "./Animal_title";
 import Animal from "./Animal";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const AnimalDetails = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -23,7 +23,7 @@ const AnimalDetails = () => {
 
     return (
         <div>
-            <Animal_title currentPage={currentPage} offset={offset}/>
+            <Animal_title currentPage={currentPage} offset={offset} />
             <Swiper
                 spaceBetween={0}
                 slidesPerView={"auto"}

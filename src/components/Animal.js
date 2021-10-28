@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
 import Animal_img from "./Animal_img";
 import Animal_metric from "./Animal_metric";
-import Animal_kidRead from "./Animal_kidRead";
+import Animal_quote from "./Animal_quote";
 
 import "./Animal.css";
 
@@ -41,38 +41,10 @@ const Animal = (props) => {
         });
     }, [scrollY]);
 
-    // animal-images-item anim test
-
     return (
         <div className="animal-wrap">
-            {/* show scrollY num */}
-            {/* <motion.section
-                style={{
-                    position: "absolute",
-                    color: "red",
-                    top: testY,
-                    left: 0,
-                }}
-            >
-                {currentY}
-            </motion.section> */}
-
-            <motion.h1
-                className="animal-title"
-                style={{
-                    top: titleY,
-                    scale: scaleY,
-                }}
-            >
-                {props.title}
-            </motion.h1>
-
-            
-
-            <p className="animal-quotes">{props.animal_quotes}</p>
-
-            {/* kid read animal-quotes with sound*/}
-            <Animal_kidRead />
+            {/* <p className="animal-quotes">{props.animal_quotes}</p> */}
+            <Animal_quote animal_quotes={props.animal_quotes} />
 
             <div className="animal-illustration"></div>
 

@@ -2,6 +2,7 @@
     color: white;
     height: 100%;
     margin-left: 6vw;
+    margin-top: 16vw;
 }
 
 .animal-title {
@@ -16,16 +17,6 @@
 }
 
 
-.animal-quotes {
-    font-family: "Metropolis-Medium", serif;
-    font-size: 2.2vw;
-    line-height: 1.33;
-    padding-left: 1em;
-    border-left: 0.2em solid white;
-    width: 65%;
-    margin-bottom: 3vw;
-    white-space: pre-wrap;
-}
 
 
 .animal-illustration {
