@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
+
 import "./Animal_kidRead.css";
 import Animal_kidRead_play from "./Animal_kidRead_play";
 import Animal_kidRead_pause from "./Animal_kidRead_pause";
@@ -40,7 +41,7 @@ export default function Animal_kidRead(props) {
                             height: "100%",
                             width: "100%",
                         }}
-                        onClick={() => {
+                        onClickCapture={() => {
                             setTapped(true);
                             setPlaying(true);
                         }}
@@ -62,7 +63,7 @@ export default function Animal_kidRead(props) {
                             height: "100%",
                             width: "100%",
                         }}
-                        onClick={() => {
+                        onClickCapture={() => {
                             setTapped(false);
                             setPlaying(false);
                         }}

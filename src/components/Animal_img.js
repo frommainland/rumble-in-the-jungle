@@ -25,6 +25,7 @@ const Animal_img = (props) => {
         setScale(getRandomInt(7, 9) / 10);
         setRotate(getRandomInt(-5, 5));
     }, []);
+    
     return (
         <motion.img
             src={props.name}
