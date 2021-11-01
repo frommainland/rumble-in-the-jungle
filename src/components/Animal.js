@@ -4,6 +4,7 @@ import useWindowSize from "./useWindowSize";
 import Animal_img from "./Animal_img";
 import Animal_metric from "./Animal_metric";
 import Animal_quote from "./Animal_quote";
+import Animal_illustration from "./Animal_illustration";
 
 import "./Animal.css";
 
@@ -43,26 +44,29 @@ const Animal = (props) => {
 
     return (
         <div className="animal-wrap">
-            {/* <p className="animal-quotes">{props.animal_quotes}</p> */}
+
             <Animal_quote animal_quotes={props.animal_quotes} />
 
-            <div className="animal-illustration"></div>
+            <Animal_illustration index={props.index}/>
 
             <section className="animal-metrics">
                 <Animal_metric
                     quantity={props.animal_metrics.left.quantity}
                     unit={props.animal_metrics.left.unit}
                     prop={props.animal_metrics.left.prop}
+                    index={0}
                 />
                 <Animal_metric
                     quantity={props.animal_metrics.middle.quantity}
                     unit={props.animal_metrics.middle.unit}
                     prop={props.animal_metrics.middle.prop}
+                    index={1}
                 />
                 <Animal_metric
                     quantity={props.animal_metrics.right.quantity}
                     unit={props.animal_metrics.right.unit}
                     prop={props.animal_metrics.right.prop}
+                    index={2}
                 />
             </section>
 

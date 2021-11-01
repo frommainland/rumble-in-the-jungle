@@ -25,9 +25,31 @@
 .animal-metric-item-number {
     line-height: 1;
     display: flex;
+    overflow: hidden;
 }
 
-.animal-metric-item-number p:nth-child(1) {
+.animal-metric-item-number p {
+    font-size: 4.4vw;
+    margin-right: 0.7vw;
+    margin-bottom: 0.7vw;
+    font-family: "MagnatHead-ExtraBold", serif;
+    white-space: nowrap;
+}
+
+.animal-metric-item-number div {
+    height: 2vw;
+    width: auto;
+    overflow: hidden;
+}
+
+.animal-metric-item-number div p {
+    font-size: 2vw;
+    vertical-align: top;
+    font-family: "Metropolis-Black", sans-serif;
+}
+
+
+/* .animal-metric-item-number p:nth-child(1) {
     font-size: 4.4vw;
     margin-right: 0.7vw;
     margin-bottom: 0.7vw;
@@ -39,4 +61,4 @@
     font-size: 2vw;
     vertical-align: top;
     font-family: "Metropolis-Black", sans-serif;
-}
+} */

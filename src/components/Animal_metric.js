@@ -9,17 +9,44 @@ const Animal_metric = (props) => {
         // Stop observe when the target enters the viewport, so the "inView" only triggered once
         unobserveOnEnter: false,
         // Shrink the root margin, so the animation will be triggered once the target reach a fixed amount of visible
-        rootMargin: "-50px 0px",
+        rootMargin: "-20px 0px -20px 0px",
     });
 
     return (
         <div className="animal-metrics-item" ref={observe}>
-            <motion.div className="animal-metric-item-number"
-            animate={{
-                opacity: inView ? 1: 0
-            }}>
-                <p>{props.quantity}</p>
-                <p>{props.unit}</p>
+            <motion.div className="animal-metric-item-number" animate={{}}>
+                <motion.p
+                    initial={{
+                        y: "4.4vw",
+                    }}
+                    animate={{
+                        y: inView ? 0 : "5vw",
+                        transition: {
+                            ease: smooth,
+                            duration: 0.8,
+                            delay: props.index * 0.2,
+                        },
+                    }}
+                >
+                    {props.quantity}
+                </motion.p>
+                <div>
+                    <motion.p
+                        initial={{
+                            y: "2vw",
+                        }}
+                        animate={{
+                            y: inView ? 0 : "3vw",
+                            transition: {
+                                ease: smooth,
+                                duration: 0.8,
+                                delay: props.index * 0.2 + 0.2,
+                            },
+                        }}
+                    >
+                        {props.unit}
+                    </motion.p>
+                </div>
             </motion.div>
             <p>{props.prop}</p>
         </div>

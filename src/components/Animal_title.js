@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import "./Animal_title.css";
 
 export default function Animal_title(props) {
@@ -32,6 +32,12 @@ export default function Animal_title(props) {
         "#FA5F1D",
     ];
 
+    const [anim, setAnim] = useState(false);
+
+    useEffect(() => {
+        setAnim(props.offset > 50 ? true : false);
+    }, [props.offset]);
+
     // const string = Array.from(animalName_data[0]);
 
     // const [name, setName] = useState(string);
@@ -49,10 +55,10 @@ export default function Animal_title(props) {
             variants={{
                 initial: {},
                 start: {
-                    scale: props.offset > 50 ? 0.6 : 1,
+                    scale: anim ? 0.6 : 1,
                     transition: {
                         duration: 0.3,
-                        ease: props.offset < 50 ? smooth : smooth_reverse,
+                        ease: anim ? smooth : smooth_reverse,
                     },
                 },
             }}

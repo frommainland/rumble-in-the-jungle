@@ -1,5 +1,3 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react/cjs/react.development";
 import "./Animal_quote.css";
 import Animal_kidRead from './Animal_kidRead'
 

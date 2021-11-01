@@ -1,0 +1,11 @@
+.animal-illustration {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vw;
+    width: auto;
+    /* width: 46vw;
+    height: 46vw; */
+    margin: 0 auto;
+    margin-bottom: 6vw;
+}

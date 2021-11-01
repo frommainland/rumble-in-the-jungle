@@ -19,15 +19,7 @@
 
 
 
-.animal-illustration {
-    background-image: url(../img/animal-elephant.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 46vw;
-    height: 46vw;
-    margin: 0 auto;
-    margin-bottom: 6vw;
-}
+
 
 .animal-essay {
     width: 55vw;

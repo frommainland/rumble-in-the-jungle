@@ -16,8 +16,12 @@ const AnimalDetails = () => {
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-        window.onscroll = () => {
+        const handleScroll = () => {
             setOffset(window.pageYOffset);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
@@ -45,6 +49,7 @@ const AnimalDetails = () => {
                         animal_essay_bot={Animal_data.elephant.animal_essay_bot}
                         animal_metrics={Animal_data.elephant.animal_metrics}
                         img={Animal_data.elephant.img}
+                        index={0}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -55,6 +60,7 @@ const AnimalDetails = () => {
                         animal_essay_bot={Animal_data.tiger.animal_essay_bot}
                         animal_metrics={Animal_data.tiger.animal_metrics}
                         img={Animal_data.tiger.img}
+                        index={1}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -65,6 +71,7 @@ const AnimalDetails = () => {
                         animal_essay_bot={Animal_data.monkey.animal_essay_bot}
                         animal_metrics={Animal_data.monkey.animal_metrics}
                         img={Animal_data.monkey.img}
+                        index={2}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -75,6 +82,7 @@ const AnimalDetails = () => {
                         animal_essay_bot={Animal_data.giraffe.animal_essay_bot}
                         animal_metrics={Animal_data.giraffe.animal_metrics}
                         img={Animal_data.giraffe.img}
+                        index={3}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -89,6 +97,7 @@ const AnimalDetails = () => {
                         }
                         animal_metrics={Animal_data.crocodile.animal_metrics}
                         img={Animal_data.crocodile.img}
+                        index={4}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -99,6 +108,7 @@ const AnimalDetails = () => {
                         animal_essay_bot={Animal_data.toucan.animal_essay_bot}
                         animal_metrics={Animal_data.toucan.animal_metrics}
                         img={Animal_data.toucan.img}
+                        index={5}
                     />
                 </SwiperSlide>
             </Swiper>
