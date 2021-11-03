@@ -50,6 +50,7 @@ const AnimalDetails = () => {
                         animal_metrics={Animal_data.elephant.animal_metrics}
                         img={Animal_data.elephant.img}
                         index={0}
+                        offset={offset}
                     />
                 </SwiperSlide>
                 <SwiperSlide>

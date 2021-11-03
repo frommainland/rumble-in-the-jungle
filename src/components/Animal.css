@@ -35,22 +35,3 @@
     margin: 0 auto;
     margin-bottom: 4vw;
 }
-
-.animal-sound {
-    margin-bottom: 7vw;
-    margin-top: 11.5vw;
-}
-
-.animal-sound div {
-    background-image: url(../img/animal-sound-icon.svg);
-    width: 7.3vw;
-    height: 7.3vw;
-    background-size: contain;
-    margin: 0 auto;
-}
-
-.animal-sound p {
-    font-family: "MagnatHead-ExtraBold", serif;
-    font-size: 1.7vw;
-    text-align: center;
-}

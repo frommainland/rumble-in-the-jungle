@@ -5,6 +5,7 @@ import Animal_img from "./Animal_img";
 import Animal_metric from "./Animal_metric";
 import Animal_quote from "./Animal_quote";
 import Animal_illustration from "./Animal_illustration";
+import Animal_sound from "./Animal_sound";
 
 import "./Animal.css";
 
@@ -80,10 +81,7 @@ const Animal = (props) => {
 
             <section className="animal-essay">{props.animal_essay_bot}</section>
 
-            <section className="animal-sound">
-                <div></div>
-                <p>What does elephant sound like?</p>
-            </section>
+            <Animal_sound offset={props.offset}/>
         </div>
     );
 };
