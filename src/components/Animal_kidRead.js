@@ -13,6 +13,9 @@ export default function Animal_kidRead(props) {
     const [audio] = useState(new Audio(mp3));
 
     useEffect(() => {
+        audio.load();
+    }, []);
+    useEffect(() => {
         playing ? audio.play() : audio.pause();
     }, [playing]);
 
@@ -31,7 +34,7 @@ export default function Animal_kidRead(props) {
 
     return (
         <div className="button-wrapper">
-            <audio>
+            <audio autoPlay="">
                 <source src={mp3} />
             </audio>
             <AnimatePresence exitBeforeEnter>

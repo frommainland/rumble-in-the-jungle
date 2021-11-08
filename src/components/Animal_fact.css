@@ -1,0 +1,25 @@
+.animal-fact-wrapper {
+    margin-bottom: 5vw;
+}
+
+.animal-fact-text {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    white-space: pre-wrap;
+}
+
+.animal-fact-text h1 {
+    font-size: 7.3vw;
+    font-family: "MagnatHead-Medium", serif;
+    padding-right: 3vw;
+    color: #fcd342;
+}
+
+.animal-fact-text p {
+    font-size: 2.2vw;
+    font-family: "Metropolis-Medium", sans-serif;
+    line-height: 1.33;
+    margin: 0;
+}

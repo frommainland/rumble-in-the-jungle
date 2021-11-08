@@ -1,11 +1,16 @@
-.animal-images-item {
-    object-fit: contain;
-    width: 74vw;
+.animal-img-wrapper {
+    width: 100%;
     height: 42vw;
-    border-radius: 8px;
-    margin-bottom: 1vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vw;
+    border-radius: 2vw;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-.animal-images-item:nth-last-child(1) {
-    margin-bottom: 4vw;
+.animal-img-item {
+    height: 130%;
+    width: auto;
 }

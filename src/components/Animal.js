@@ -6,6 +6,7 @@ import Animal_metric from "./Animal_metric";
 import Animal_quote from "./Animal_quote";
 import Animal_illustration from "./Animal_illustration";
 import Animal_sound from "./Animal_sound";
+import Animal_fact from "./Animal_fact";
 
 import "./Animal.css";
 
@@ -45,10 +46,9 @@ const Animal = (props) => {
 
     return (
         <div className="animal-wrap">
-
             <Animal_quote animal_quotes={props.animal_quotes} />
 
-            <Animal_illustration index={props.index}/>
+            <Animal_illustration index={props.index} />
 
             <section className="animal-metrics">
                 <Animal_metric
@@ -71,17 +71,31 @@ const Animal = (props) => {
                 />
             </section>
 
-            <section className="animal-essay">{props.animal_essay_top}</section>
+            <section className="animal-fact">
+                <Animal_fact
+                    offset={props.offset}
+                    img={props.img.img1}
+                    index={1}
+                    fact={props.fact.fact1}
+                    color={props.color}
+                />
+                <Animal_fact
+                    offset={props.offset}
+                    img={props.img.img2}
+                    index={2}
+                    fact={props.fact.fact2}
+                    color={props.color}
+                />
+                <Animal_fact
+                    offset={props.offset}
+                    img={props.img.img3}
+                    index={3}
+                    fact={props.fact.fact3}
+                    color={props.color}
+                />
+            </section>
 
-            <div className="animal-images">
-                <Animal_img name={props.img.img1} />
-                <Animal_img name={props.img.img2} />
-                <Animal_img name={props.img.img3} />
-            </div>
-
-            <section className="animal-essay">{props.animal_essay_bot}</section>
-
-            <Animal_sound offset={props.offset}/>
+            <Animal_sound offset={props.offset} />
         </div>
     );
 };

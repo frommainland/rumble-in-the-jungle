@@ -31,6 +31,7 @@ const AnimalDetails = () => {
             <Swiper
                 spaceBetween={0}
                 slidesPerView={"auto"}
+                autoHeight={true}
                 onActiveIndexChange={(current) => {
                     setCurrentPage(current.activeIndex);
                 }}
@@ -51,6 +52,8 @@ const AnimalDetails = () => {
                         img={Animal_data.elephant.img}
                         index={0}
                         offset={offset}
+                        fact={Animal_data.elephant.animal_fact}
+                        color={Animal_data.elephant.color}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -62,6 +65,9 @@ const AnimalDetails = () => {
                         animal_metrics={Animal_data.tiger.animal_metrics}
                         img={Animal_data.tiger.img}
                         index={1}
+                        offset={offset}
+                        fact={Animal_data.tiger.animal_fact}
+                        color={Animal_data.tiger.color}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -73,6 +79,9 @@ const AnimalDetails = () => {
                         animal_metrics={Animal_data.monkey.animal_metrics}
                         img={Animal_data.monkey.img}
                         index={2}
+                        offset={offset}
+                        fact={Animal_data.monkey.animal_fact}
+                        color={Animal_data.monkey.color}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -84,6 +93,9 @@ const AnimalDetails = () => {
                         animal_metrics={Animal_data.giraffe.animal_metrics}
                         img={Animal_data.giraffe.img}
                         index={3}
+                        offset={offset}
+                        fact={Animal_data.giraffe.animal_fact}
+                        color={Animal_data.giraffe.color}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -99,6 +111,9 @@ const AnimalDetails = () => {
                         animal_metrics={Animal_data.crocodile.animal_metrics}
                         img={Animal_data.crocodile.img}
                         index={4}
+                        offset={offset}
+                        fact={Animal_data.crocodile.animal_fact}
+                        color={Animal_data.crocodile.color}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -110,6 +125,9 @@ const AnimalDetails = () => {
                         animal_metrics={Animal_data.toucan.animal_metrics}
                         img={Animal_data.toucan.img}
                         index={5}
+                        offset={offset}
+                        fact={Animal_data.toucan.animal_fact}
+                        color={Animal_data.toucan.color}
                     />
                 </SwiperSlide>
             </Swiper>

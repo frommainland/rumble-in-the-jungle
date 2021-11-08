@@ -23,8 +23,8 @@ const Animal_metric = (props) => {
                         y: inView ? 0 : "5vw",
                         transition: {
                             ease: smooth,
-                            duration: 0.8,
-                            delay: props.index * 0.2,
+                            duration: 0.4,
+                            delay: props.index * 0.1,
                         },
                     }}
                 >
@@ -39,8 +39,8 @@ const Animal_metric = (props) => {
                             y: inView ? 0 : "3vw",
                             transition: {
                                 ease: smooth,
-                                duration: 0.8,
-                                delay: props.index * 0.2 + 0.2,
+                                duration: 0.4,
+                                delay: props.index * 0.1 + 0.1,
                             },
                         }}
                     >

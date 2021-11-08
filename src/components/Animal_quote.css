@@ -1,8 +1,8 @@
 .animal-quote-wrap {
-    margin-right: 6vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4vw;
 }
 
 .animal-quote-text {

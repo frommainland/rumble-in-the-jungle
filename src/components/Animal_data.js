@@ -40,15 +40,17 @@ const Animal_data = {
                 prop: "LIFESPAN",
             },
         },
-        animal_essay_top:
-            "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+        animal_fact: {
+            fact1: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+            fact2: "Since the diet of forest elephants is dominated by fruit, they play a crucial role in dispersing many tree species, particularly the seeds of large trees which tend to have high carbon content. They are therefore referred to as the 'mega-gardener of the forest'.",
+            fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+        },
         img: {
             img1: elephant1,
             img2: elephant2,
             img3: elephant3,
         },
-        animal_essay_bot:
-            "Since the diet of forest elephants is dominated by fruit, they play a crucial role in dispersing many tree species, particularly the seeds of large trees which tend to have high carbon content. They are therefore referred to as the 'mega-gardener of the forest'.",
+        color: "#FCD342",
     },
 
     // tiger
@@ -73,15 +75,17 @@ const Animal_data = {
                 prop: "LIFESPAN",
             },
         },
-        animal_essay_top:
-            "A tiger can consume more than 80 pounds of meat at one time. On average, tigers give birth to two to four cubs every two years. If all the cubs in one litter die, a second litter may be produced within five months.\n\nTigers are mostly solitary, apart from associations between mother and offspring. Individual tigers have a large territory, and the size is determined mostly by the availability of prey. Individuals mark their domain with urine, feces, rakes, scrapes, and vocalizing",
+        animal_fact: {
+            fact1: "A tiger can consume more than 80 pounds of meat at one time. On average, tigers give birth to two to four cubs every two years. If all the cubs in one litter die, a second litter may be produced within five months.\n\nTigers are mostly solitary, apart from associations between mother and offspring. Individual tigers have a large territory, and the size is determined mostly by the availability of prey. Individuals mark their domain with urine, feces, rakes, scrapes, and vocalizing",
+            fact2: "Tigers eat a variety of prey ranging in size from termites to elephant calves. However, an integral component of their diet are large-bodied prey weighing about 20 kg (45 lbs.) or larger such as moose, deer species, pigs, cows, horses, buffalos and goats.",
+            fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+        },
         img: {
             img1: tiger1,
             img2: tiger2,
             img3: tiger3,
         },
-        animal_essay_bot:
-            "Tigers eat a variety of prey ranging in size from termites to elephant calves. However, an integral component of their diet are large-bodied prey weighing about 20 kg (45 lbs.) or larger such as moose, deer species, pigs, cows, horses, buffalos and goats.",
+        color: "#1C60E3",
     },
 
     // monkey
@@ -106,15 +110,17 @@ const Animal_data = {
                 prop: "LIFESPAN",
             },
         },
-        animal_essay_top:
-            "Squirrel monkeys are considered to be one of the cleverest monkeys due to having a large brain compared to the size of their body. They are highly vocal and have around 25-30 different types of call.",
         img: {
             img1: monkey1,
             img2: monkey2,
             img3: monkey3,
         },
-        animal_essay_bot:
-            "They eat food items that are both plant and animal based. These range from flowers, leaves and nuts to insects, lizards and even eggs.",
+        animal_fact: {
+            fact1: "Squirrel monkeys are considered to be one of the cleverest monkeys due to having a large brain compared to the size of their body. They are highly vocal and have around 25-30 different types of call.",
+            fact2: "They eat food items that are both plant and animal based. These range from flowers, leaves and nuts to insects, lizards and even eggs.",
+            fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+        },
+        color: "#5BC07E",
     },
 
     // Giraffe
@@ -139,15 +145,18 @@ const Animal_data = {
                 prop: "LIFESPAN",
             },
         },
-        animal_essay_top:
-            "When giraffes walk, they move both legs on one side of their body and then both legs on the other side, which is unusual.",
+        animal_fact: {
+            fact1: "When giraffes walk, they move both legs on one side of their body and then both legs on the other side, which is unusual.",
+            fact2: "Their extreme height allows them to eat leaves and shoots located much higher than other animals can reach. In particular, they seek out acacia trees. Their long tongues are helpful in eating because they help pull leaves from the trees. Spending most of the day eating, a full-grown giraffe consumes over 45 kg (100 lb.) of leaves and twigs a day.",
+            fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+        },
+
         img: {
             img1: giraffe1,
             img2: giraffe2,
             img3: giraffe3,
         },
-        animal_essay_bot:
-            "Their extreme height allows them to eat leaves and shoots located much higher than other animals can reach. In particular, they seek out acacia trees. Their long tongues are helpful in eating because they help pull leaves from the trees. Spending most of the day eating, a full-grown giraffe consumes over 45 kg (100 lb.) of leaves and twigs a day.",
+        color: "#EB3136",
     },
 
     // Crocodile
@@ -172,15 +181,17 @@ const Animal_data = {
                 prop: "LIFESPAN",
             },
         },
-        animal_essay_top:
-            "Crocodiles are often confused with alligators, but there are some easy-to-spot differences. An alligator's jaw is U-shaped, while a crocodile has a V-shaped jaw.",
         img: {
             img1: crocodile1,
             img2: crocodile2,
             img3: crocodile3,
         },
-        animal_essay_bot:
-            "A crocodile will eat almost anything that moves. Hatchlings and young crocodiles eat small fish, snails, crustaceans, and insects. Adults feed mostly at night on fish, crabs, turtles, snakes, and small mammals.",
+        animal_fact: {
+            fact1: "Crocodiles are often confused with alligators, but there are some easy-to-spot differences. An alligator's jaw is U-shaped, while a crocodile has a V-shaped jaw.",
+            fact2: "A crocodile will eat almost anything that moves. Hatchlings and young crocodiles eat small fish, snails, crustaceans, and insects. Adults feed mostly at night on fish, crabs, turtles, snakes, and small mammals.",
+            fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+        },
+        color: "#FA5F1D",
     },
 
     // Toucan
@@ -205,15 +216,17 @@ const Animal_data = {
                 prop: "LIFESPAN",
             },
         },
-        animal_essay_top:
-            "Toucans spend a lot of their time in trees, they aren’t the best fliers around.\n\nThese birds have to flap their wings vigorously to travel short distances, so you’ll often find them hopping rather than flying through the air.",
         img: {
             img1: toucan1,
             img2: toucan2,
             img3: toucan3,
         },
-        animal_essay_bot:
-            "Toucans use their beak to peel and eat different kinds of fruit, which happens to be the kind of food they eat most often.\n\nSometimes toucans will choose to snack on insects, frogs, and reptiles, or the eggs of other birds.",
+        animal_fact: {
+            fact1: "Toucans spend a lot of their time in trees, they aren’t the best fliers around.\n\nThese birds have to flap their wings vigorously to travel short distances, so you’ll often find them hopping rather than flying through the air.",
+            fact2: "Toucans use their beak to peel and eat different kinds of fruit, which happens to be the kind of food they eat most often.\n\nSometimes toucans will choose to snack on insects, frogs, and reptiles, or the eggs of other birds.",
+            fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
+        },
+        color: "#ED93ED",
     },
 };
 
