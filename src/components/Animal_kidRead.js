@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 
 import "./Animal_kidRead.css";
 import Animal_kidRead_play from "./Animal_kidRead_play";
@@ -10,11 +10,9 @@ export default function Animal_kidRead(props) {
     const [tapped, setTapped] = useState(false);
     const [playing, setPlaying] = useState(false);
 
-    const [audio] = useState(new Audio(mp3));
+    const [audio] = useState(new Audio(mp3))
+    const audioRef = useRef()
 
-    useEffect(() => {
-        audio.load();
-    }, []);
     useEffect(() => {
         playing ? audio.play() : audio.pause();
     }, [playing]);
@@ -34,8 +32,8 @@ export default function Animal_kidRead(props) {
 
     return (
         <div className="button-wrapper">
-            <audio autoPlay="">
-                <source src={mp3} />
+            <audio>
+                <source type="audio/mp3" src={mp3} />
             </audio>
             <AnimatePresence exitBeforeEnter>
                 {!tapped && (
@@ -83,6 +81,6 @@ export default function Animal_kidRead(props) {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div>
+        </div >
     );
 }

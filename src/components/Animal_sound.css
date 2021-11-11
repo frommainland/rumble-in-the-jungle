@@ -1,1 +1,63 @@
+.svgWrapper {
+    position: relative;
+    height: 30vw;
+    text-transform: uppercase;
+    fill: #FCD342;
+    margin-bottom: 10vw;
+}
 
+.text {
+    font-family: "MagnatHead-Light", serif;
+    font-size: 30px;
+}
+
+
+.outerText {
+    width: 26vw;
+    height:26vw;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.innerText {
+    width: 18vw;
+    height: 18vw;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transform-origin: 50% 50%;
+}
+
+.innerText-text {
+    font-family: "MagnatHead-Light", serif;
+    font-size: 25px;
+}
+
+.animate {
+    -webkit-animation:spin 24s linear infinite;
+    -moz-animation:spin 24s linear infinite;
+    animation:spin 24s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.animate-reverse {
+    -webkit-animation:spin-reverse 24s linear infinite;
+    -moz-animation:spin-reverse 24s linear infinite;
+    animation:spin-reverse 24s linear infinite;
+}
+@-moz-keyframes spin-reverse { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin-reverse { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin-reverse { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+.play{
+    width: calc(70/812 * 100vw);
+    height: calc(70/812 * 100vw);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

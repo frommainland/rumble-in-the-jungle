@@ -17,3 +17,8 @@
     font-family: "MagnatHead-Medium";
     src: url("./font/MagnatHead-Medium.otf") format("opentype");
 }
+
+@font-face {
+    font-family: "MagnatHead-Light";
+    src: url("./font/MagnatHead-Light.otf") format("opentype");
+}

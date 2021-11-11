@@ -95,7 +95,7 @@ const Animal = (props) => {
                 />
             </section>
 
-            <Animal_sound offset={props.offset} />
+            <Animal_sound color={props.color} sound={props.sound} title={props.title}/>
         </div>
     );
 };

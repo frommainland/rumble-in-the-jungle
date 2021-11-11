@@ -25,6 +25,13 @@ const AnimalDetails = () => {
         };
     }, []);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
     return (
         <div>
             <Animal_title currentPage={currentPage} offset={offset} />
@@ -35,12 +42,12 @@ const AnimalDetails = () => {
                 onActiveIndexChange={(current) => {
                     setCurrentPage(current.activeIndex);
                 }}
-                onSlideChange={() => window.scrollTo(0, 0)}
+                onSlideChange={scrollToTop}
 
-                // onActiveIndexChange={(current) =>
-                //     console.log(current.activeIndex)
-                // }
-                // onSwiper={(swiper) => console.log(swiper)}
+            // onActiveIndexChange={(current) =>
+            //     console.log(current.activeIndex)
+            // }
+            // onSwiper={(swiper) => console.log(swiper)}
             >
                 <SwiperSlide>
                     <Animal
@@ -54,6 +61,7 @@ const AnimalDetails = () => {
                         offset={offset}
                         fact={Animal_data.elephant.animal_fact}
                         color={Animal_data.elephant.color}
+                        sound={Animal_data.elephant.sound}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -68,6 +76,7 @@ const AnimalDetails = () => {
                         offset={offset}
                         fact={Animal_data.tiger.animal_fact}
                         color={Animal_data.tiger.color}
+                        sound={Animal_data.tiger.sound}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -82,6 +91,7 @@ const AnimalDetails = () => {
                         offset={offset}
                         fact={Animal_data.monkey.animal_fact}
                         color={Animal_data.monkey.color}
+                        sound={Animal_data.monkey.sound}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -96,6 +106,7 @@ const AnimalDetails = () => {
                         offset={offset}
                         fact={Animal_data.giraffe.animal_fact}
                         color={Animal_data.giraffe.color}
+                        sound={Animal_data.giraffe.sound}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -114,6 +125,7 @@ const AnimalDetails = () => {
                         offset={offset}
                         fact={Animal_data.crocodile.animal_fact}
                         color={Animal_data.crocodile.color}
+                        sound={Animal_data.crocodile.sound}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -128,6 +140,7 @@ const AnimalDetails = () => {
                         offset={offset}
                         fact={Animal_data.toucan.animal_fact}
                         color={Animal_data.toucan.color}
+                        sound={Animal_data.toucan.sound}
                     />
                 </SwiperSlide>
             </Swiper>

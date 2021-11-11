@@ -39,9 +39,7 @@ const Animal_img = (props) => {
 
     const size = useWindowSize();
     const { scrollY } = useViewportScroll();
-    const y = useTransform(scrollY, [boxTop, boxTop + size.height], [0, 50], {
-        clamp: false,
-    });
+    const y = useTransform(scrollY, [boxTop, boxTop + size.height], [0, -50], { clamp: false });
 
     return (
         <motion.div
@@ -57,7 +55,7 @@ const Animal_img = (props) => {
                 className="animal-img-item"
                 ref={observe}
                 style={{
-                    y: inView ? y : 0,
+                    y: inView ? y : '',
                 }}
             />
         </motion.div>

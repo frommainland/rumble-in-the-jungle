@@ -51,6 +51,7 @@ const Animal_data = {
             img3: elephant3,
         },
         color: "#FCD342",
+        sound:'trumpet'
     },
 
     // tiger
@@ -86,6 +87,7 @@ const Animal_data = {
             img3: tiger3,
         },
         color: "#1C60E3",
+        sound:' grrr'
     },
 
     // monkey
@@ -121,6 +123,7 @@ const Animal_data = {
             fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
         },
         color: "#5BC07E",
+        sound:' whoop'
     },
 
     // Giraffe
@@ -157,6 +160,7 @@ const Animal_data = {
             img3: giraffe3,
         },
         color: "#EB3136",
+        sound:' brrr'
     },
 
     // Crocodile
@@ -192,6 +196,7 @@ const Animal_data = {
             fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
         },
         color: "#FA5F1D",
+        sound:' hiss'
     },
 
     // Toucan
@@ -227,6 +232,7 @@ const Animal_data = {
             fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
         },
         color: "#ED93ED",
+        sound:' groomkk'
     },
 };
 
