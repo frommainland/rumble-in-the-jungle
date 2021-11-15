@@ -87,7 +87,7 @@ const Animal_data = {
             img3: tiger3,
         },
         color: "#1C60E3",
-        sound:' grrr'
+        sound:' grrrrr'
     },
 
     // monkey
@@ -160,7 +160,7 @@ const Animal_data = {
             img3: giraffe3,
         },
         color: "#EB3136",
-        sound:' brrr'
+        sound:' brrrrr'
     },
 
     // Crocodile
@@ -196,7 +196,7 @@ const Animal_data = {
             fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
         },
         color: "#FA5F1D",
-        sound:' hiss'
+        sound:' hissss'
     },
 
     // Toucan

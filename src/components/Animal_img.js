@@ -39,7 +39,7 @@ const Animal_img = (props) => {
 
     const size = useWindowSize();
     const { scrollY } = useViewportScroll();
-    const y = useTransform(scrollY, [boxTop, boxTop + size.height], [0, -50], { clamp: false });
+    const y = useTransform(scrollY, [boxTop, boxTop + size.height], [0, -size.height/5], { clamp: false });
 
     return (
         <motion.div

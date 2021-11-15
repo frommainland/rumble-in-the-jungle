@@ -12,7 +12,9 @@ import bg1a from "../img/prologueBg1a.svg";
 import bg1b from "../img/prologueBg1b.svg";
 import bg2 from "../img/prologueBg2.svg";
 import bg3 from "../img/prologueBg3.svg";
-import { scryRenderedComponentsWithType } from "react-dom/test-utils";
+
+import Prologue_title from './Prologue_title'
+import Prologue_title2nd from './Prologue_title2nd'
 
 export default function Prologue() {
     const size = useWindowSize();
@@ -44,7 +46,7 @@ export default function Prologue() {
     const bg1Brotate = useTransform(scrollX, [0, 300, 900], [0, 0, 60]);
 
     // text anim
-    const textScale = useTransform(scrollX, [0, 400], [1, 25]);
+    const textScale = useTransform(scrollX, [0, 400], [1, 20]);
     const textLeft = useTransform(scrollX, [0, 400], [0, 400], {
         clamp: false,
     });
@@ -73,7 +75,7 @@ export default function Prologue() {
     return (
         <div>
             {/* bg1 */}
-            <div className="bgImgWrap">
+            {/* <div className="bgImgWrap">
                 <motion.div
                     className="bg1"
                     style={{
@@ -114,10 +116,10 @@ export default function Prologue() {
                         top: 0,
                     }}
                 />
-            </div>
+            </div> */}
 
             {/* bg2 */}
-            <motion.div className="bgImgWrap">
+            {/* <motion.div className="bgImgWrap">
                 <motion.div
                     className="bg2"
                     style={{
@@ -145,10 +147,10 @@ export default function Prologue() {
                         top: 0,
                     }}
                 />
-            </motion.div>
+            </motion.div> */}
 
             {/* bg3 */}
-            <div className="bgImgWrap">
+            {/* <div className="bgImgWrap">
                 <motion.div
                     className="bg3"
                     style={{
@@ -164,57 +166,13 @@ export default function Prologue() {
                         filter: bg3Filter,
                     }}
                 />
-            </div>
+            </div> */}
 
             {/* rumble in jungle text */}
-            <motion.div
-                className="textOverflowWrap"
-                style={{
-                    color: "white",
-                    fontFamily: "CyrulikSharpBold",
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    width: "100vw",
-                    height: "100vh",
-                    overflow: "hidden",
-                    x: textLeft,
-                }}
-            >
-                <motion.div
-                    className="textScaleAll"
-                    style={{
-                        width: "100vw",
-                        height: "100vh",
-                        display: "flex",
-                        flexWrap: "nowrap",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        scale: textScale,
-                        originY: 0.25,
-                    }}
-                >
-                    <motion.h1
-                        style={{
-                            fontSize: 80,
-                            margin: 0,
-                        }}
-                    >
-                        RUMBLE
-                    </motion.h1>
-                    <motion.h3
-                        style={{
-                            fontSize: 60,
-                            margin: 0,
-                        }}
-                    >
-                        In The Jungle
-                    </motion.h3>
-                </motion.div>
-            </motion.div>
+            {/* <Prologue_title textScale={textScale} /> */}
 
             {/* good studio presents text */}
+            <Prologue_title2nd />
             <motion.div
                 className='text-2ndTitle'
                 initial={{
@@ -240,12 +198,17 @@ export default function Prologue() {
             <h1
                 style={{
                     position: "fixed",
-                    color: "white",
+                    color: "red",
                     fontSize: 16,
                 }}
             >
                 {currentX} - window.width {size.width}
             </h1>
+            <div style={{
+                height: 10,
+                width: '400vw'
+            }}></div>
+
         </div >
     );
 }

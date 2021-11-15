@@ -1,0 +1,18 @@
+.title-wrap-6jh {
+    all: initial;
+    position: fixed;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    font-family: "MagnatHead-ExtraBold", serif;
+    font-size: calc((24/812)*100vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-wrap-6jh h3 {
+    margin: 0;
+    line-height: calc(40/24);
+}

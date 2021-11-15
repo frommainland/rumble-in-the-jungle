@@ -1,0 +1,28 @@
+.title-wrap {
+    position: fixed;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.title-top-wrap {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.title-top {
+    font-family: 'Metropolis-Black', sans-serif;
+    font-size: calc((80/812)*100vw);
+    text-transform: uppercase;
+}
+
+.title-bottom {
+    font-family: "MagnatHead-ExtraBold", serif;
+    font-size: calc((60/812)*100vw);
+    text-transform: capitalize;
+}

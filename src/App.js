@@ -7,9 +7,10 @@ function App() {
     return (
         <div className="App">
             {/* <AnimalParallax /> */}
-            <AnimalDetails />
-            {/* <Prologue /> */}
+            {/* <AnimalDetails /> */}
+            <Prologue />
         </div>
+
     );
 }
 

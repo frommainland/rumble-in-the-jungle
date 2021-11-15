@@ -37,7 +37,7 @@ export default function Animal_sound(props) {
                         fill: props.color,
                         opacity: 0.5
                     }}>
-                        <textPath href="#Text" textLength={textPath / 2}>&nbsp;· {props.title} sound · {props.title} sound&nbsp;</textPath>
+                        <textPath href="#Text" textLength={textPath / 2}>&nbsp;⁛ {props.title} sound ⁛ {props.title} sound&nbsp;</textPath>
                     </text>
                 </svg>
             </div>
@@ -51,7 +51,7 @@ export default function Animal_sound(props) {
                     <text className="innerText-text" style={{
                         fill: props.color
                     }}>
-                        <textPath href="#innerText" textLength={innerTextPath / 2}>&nbsp;{props.sound} · {props.sound} · &nbsp;</textPath>
+                        <textPath href="#innerText" textLength={innerTextPath / 2}>&nbsp;{props.sound} ⁕ {props.sound} ⁕</textPath>
                     </text>
                 </svg>
             </div>
