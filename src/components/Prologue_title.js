@@ -4,7 +4,7 @@ import './Prologue_title.css'
 
 const Prologue_title = (props) => {
 
-    const title = Array.from('rumble')
+    const title = Array.from('rumble1')
     const color = [
         "#FCD342",
         "#ED93ED",

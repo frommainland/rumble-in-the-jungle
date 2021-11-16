@@ -12,7 +12,13 @@
     align-items: center;
 }
 
+.title-wrap-6jh div {
+    overflow: hidden;
+}
+
 .title-wrap-6jh h3 {
     margin: 0;
     line-height: calc(40/24);
+
 }
+

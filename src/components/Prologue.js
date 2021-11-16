@@ -21,7 +21,14 @@ export default function Prologue() {
     const smooth = [0.4, 0, 0, 1]
     const { scrollXProgress, scrollX } = useViewportScroll();
 
+    // get the currentx 
     const [currentX, setCurrentX] = useState(0);
+    useEffect(() => {
+        const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()));
+        return () => {
+            unsubscribeX();
+        };
+    });
 
     // bg3 anim
     const bg3Scale = useTransform(scrollX, [0, 700], [1, 5]);
@@ -45,21 +52,14 @@ export default function Prologue() {
     const bg1Arotate = useTransform(scrollX, [0, 300, 900], [0, 0, 60]);
     const bg1Brotate = useTransform(scrollX, [0, 300, 900], [0, 0, 60]);
 
-    // text anim
-    const textScale = useTransform(scrollX, [0, 400], [1, 20]);
-    const textLeft = useTransform(scrollX, [0, 400], [0, 400], {
-        clamp: false,
-    });
+    // text 'rumble in the jungle' anim
+    const textScale = useTransform(scrollX, [0, 450], [1/26, 1]);
+
 
     // text 'good studio presents' anim, based on scrollx to trigger anim
     const [text2Anim, setText2Anim] = useState(false)
 
-    useEffect(() => {
-        const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()));
-        return () => {
-            unsubscribeX();
-        };
-    });
+
 
     useEffect(() => {
         scrollX.onChange((value) => {
@@ -150,7 +150,7 @@ export default function Prologue() {
             </motion.div> */}
 
             {/* bg3 */}
-            {/* <div className="bgImgWrap">
+            <div className="bgImgWrap">
                 <motion.div
                     className="bg3"
                     style={{
@@ -166,33 +166,13 @@ export default function Prologue() {
                         filter: bg3Filter,
                     }}
                 />
-            </div> */}
+            </div>
 
             {/* rumble in jungle text */}
-            {/* <Prologue_title textScale={textScale} /> */}
+            <Prologue_title textScale={textScale} />
 
             {/* good studio presents text */}
-            <Prologue_title2nd />
-            <motion.div
-                className='text-2ndTitle'
-                initial={{
-                    opacity: 0,
-                    scale: 0.8
-                }}
-                animate={{
-                    opacity: text2Anim ? 1 : 0,
-                    scale: text2Anim ? 1 : 0.8,
-                }}
-                transition={{
-                    ease: smooth,
-                    duration: 2,
-                }}
-            >
-                <p>Good studio</p>
-                <p>presents</p>
-            </motion.div>
-
-
+            {/* <Prologue_title2nd text2Anim={text2Anim} /> */}
 
             {/* scrollX text output test */}
             <h1
@@ -202,13 +182,13 @@ export default function Prologue() {
                     fontSize: 16,
                 }}
             >
-                {currentX} - window.width {size.width}
+                {currentX} & (window.width {size.width})
             </h1>
             <div style={{
                 height: 10,
                 width: '400vw'
             }}></div>
 
-        </div >
+        </div>
     );
 }

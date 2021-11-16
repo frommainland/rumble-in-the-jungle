@@ -1,13 +1,18 @@
 .title-wrap {
+    --scaleHeight: 2600vh;
+    --scaleWidth: 2600vw;
     position: fixed;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: var(--scaleHeight);
+    width: var(--scaleWidth);
     overflow: hidden;
+    top: 50%;
+    left: 50%;
+    margin: calc(var(--scaleHeight)/2*-1) 0 0 calc(var(--scaleWidth)/2*-1)
 }
 
 .title-top-wrap {
@@ -17,12 +22,12 @@
 
 .title-top {
     font-family: 'Metropolis-Black', sans-serif;
-    font-size: calc((80/812)*100vw);
+    font-size: calc((80/812)*100vw*26);
     text-transform: uppercase;
 }
 
 .title-bottom {
     font-family: "MagnatHead-ExtraBold", serif;
-    font-size: calc((60/812)*100vw);
+    font-size: calc((60/812)*100vw*26);
     text-transform: capitalize;
 }
