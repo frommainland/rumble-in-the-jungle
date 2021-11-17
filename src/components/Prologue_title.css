@@ -1,18 +1,21 @@
 .title-wrap {
-    --scaleHeight: 2600vh;
-    --scaleWidth: 2600vw;
+    /* --scaleFactor: 6; */
     position: fixed;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: var(--scaleHeight);
-    width: var(--scaleWidth);
+    height: calc(var(--scaleFactor)*100vh);
+    width: calc(var(--scaleFactor)*100vw);
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
-    top: 50%;
-    left: 50%;
-    margin: calc(var(--scaleHeight)/2*-1) 0 0 calc(var(--scaleWidth)/2*-1)
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* top: 50%;
+    left: 50%; */
+    /* margin: calc(var(--scaleFactor)*100vh/2*-1) 0 0 calc(var(--scaleFactor)*100vw/2*-1) */
 }
 
 .title-top-wrap {
@@ -22,12 +25,13 @@
 
 .title-top {
     font-family: 'Metropolis-Black', sans-serif;
-    font-size: calc((80/812)*100vw*26);
+    font-size: calc((80/812)*100vw);
     text-transform: uppercase;
+    line-height: calc(70/80);
 }
 
 .title-bottom {
     font-family: "MagnatHead-ExtraBold", serif;
-    font-size: calc((60/812)*100vw*26);
+    font-size: calc((60/812)*100vw);
     text-transform: capitalize;
 }

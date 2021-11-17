@@ -4,7 +4,7 @@ import './Prologue_title.css'
 
 const Prologue_title = (props) => {
 
-    const title = Array.from('rumble1')
+    const title = Array.from('rumble')
     const color = [
         "#FCD342",
         "#ED93ED",
@@ -19,7 +19,8 @@ const Prologue_title = (props) => {
             className='title-wrap'
             style={{
                 scale: props.textScale,
-            }}>
+            }}
+        >
             <div className='title-top-wrap'>
                 {title.map((item, i) => (
                     <h1 className='title-top' key={i} style={{
@@ -30,7 +31,7 @@ const Prologue_title = (props) => {
                 ))}
             </div>
 
-            <h1 className='title-bottom'>in the jungle</h1>
+            <h1 className='title-bottom' >in the jungle</h1>
         </motion.div >
     )
 }

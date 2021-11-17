@@ -1,0 +1,30 @@
+.swiperIndicator-wrap {
+    position: fixed;
+    right: calc((34/812)*100vw);
+    bottom: calc((34/812)*100vw);
+    width: calc((86/812)*100vw);
+    height: calc((47/812)*100vw);
+}
+
+.swiperIndicator-wrap-circle {
+    width: calc((8/812)*100vw);
+    height: calc((8/812)*100vw);
+    border-radius: 10vw;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc((25/812)*100vw);
+    animation:swipe 3s cubic-bezier(0.4, 0, 0, 1) infinite;
+}
+
+
+@keyframes swipe {
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc((30/812)*-100vw), -50%);
+    }
+}

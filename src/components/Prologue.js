@@ -13,6 +13,7 @@ import bg1b from "../img/prologueBg1b.svg";
 import bg2 from "../img/prologueBg2.svg";
 import bg3 from "../img/prologueBg3.svg";
 
+import SwiperIndicator from "./SwiperIndicator";
 import Prologue_title from './Prologue_title'
 import Prologue_title2nd from './Prologue_title2nd'
 
@@ -53,7 +54,7 @@ export default function Prologue() {
     const bg1Brotate = useTransform(scrollX, [0, 300, 900], [0, 0, 60]);
 
     // text 'rumble in the jungle' anim
-    const textScale = useTransform(scrollX, [0, 450], [1/26, 1]);
+    const textScale = useTransform(scrollX, [0, 150], [1, 26]);
 
 
     // text 'good studio presents' anim, based on scrollx to trigger anim
@@ -74,6 +75,7 @@ export default function Prologue() {
 
     return (
         <div>
+
             {/* bg1 */}
             {/* <div className="bgImgWrap">
                 <motion.div
@@ -188,6 +190,9 @@ export default function Prologue() {
                 height: 10,
                 width: '400vw'
             }}></div>
+
+            {/* hint user to swiper right */}
+            <SwiperIndicator currentX={currentX} />
 
         </div>
     );
