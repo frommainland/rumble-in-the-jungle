@@ -1,0 +1,23 @@
+.bgImgWrap-bg2-img {
+    background-image: url('../img/prologueBg2.svg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+}
+
+.bgImgWrap-bg2 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    perspective: 240px;
+}
+
+.bgImgWrap-bg2-mask {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

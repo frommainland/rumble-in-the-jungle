@@ -11,11 +11,14 @@ import "./Prologue.css";
 import bg1a from "../img/prologueBg1a.svg";
 import bg1b from "../img/prologueBg1b.svg";
 import bg2 from "../img/prologueBg2.svg";
-import bg3 from "../img/prologueBg3.svg";
 
 import SwiperIndicator from "./SwiperIndicator";
 import Prologue_title from './Prologue_title'
 import Prologue_title2nd from './Prologue_title2nd'
+
+// lower bg number means index num is higer, closer to title text, earlier to anim
+import Prologue_bg1 from "./Prologue_bg1";
+import Prologue_bg2 from "./Prologue_bg2";
 
 export default function Prologue() {
     const size = useWindowSize();
@@ -36,6 +39,7 @@ export default function Prologue() {
     const rotate = useTransform(scrollX, [0, 700], [1, 40]);
     const filter = useTransform(scrollX, [0, 700], [0, 20]);
     const bg3Filter = useMotionTemplate`blur(${filter}px)`;
+
 
     // bg2 anim
     const bg2Scale = useTransform(scrollX, [0, 900], [1, 5], { clamp: false });
@@ -64,7 +68,7 @@ export default function Prologue() {
 
     useEffect(() => {
         scrollX.onChange((value) => {
-            if (value >= 600) {
+            if (value >= 600 && value <= 800) {
                 setText2Anim(true)
             } else {
                 setText2Anim(false)
@@ -76,8 +80,8 @@ export default function Prologue() {
     return (
         <div>
 
-            {/* bg1 */}
-            {/* <div className="bgImgWrap">
+            {/* bg3 */}
+            <div className="bgImgWrap">
                 <motion.div
                     className="bg1"
                     style={{
@@ -118,63 +122,19 @@ export default function Prologue() {
                         top: 0,
                     }}
                 />
-            </div> */}
+            </div>
 
             {/* bg2 */}
-            {/* <motion.div className="bgImgWrap">
-                <motion.div
-                    className="bg2"
-                    style={{
-                        width: "120vw",
-                        height: "150vh",
-                        backgroundImage: `url(${bg2})`,
-                        backgroundSize: "cover",
-                        position: "absolute",
-                        left: "-9%",
-                        top: "-28%",
-                        scale: bg2Scale,
-                        rotate: bg2Rotate,
-                        filter: bg2Filter,
-                    }}
-                />
-                <motion.div
-                    className="bg2Mask"
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        background: "black",
-                        opacity: bg2MaskOpacity,
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                    }}
-                />
-            </motion.div> */}
+            <Prologue_bg2 />
 
-            {/* bg3 */}
-            <div className="bgImgWrap">
-                <motion.div
-                    className="bg3"
-                    style={{
-                        width: "100vw",
-                        height: "100vh",
-                        backgroundImage: `url(${bg3})`,
-                        backgroundSize: "cover",
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        scale: bg3Scale,
-                        rotate: rotate,
-                        filter: bg3Filter,
-                    }}
-                />
-            </div>
+            {/* bg1 */}
+            <Prologue_bg1 />
 
             {/* rumble in jungle text */}
             <Prologue_title textScale={textScale} />
 
             {/* good studio presents text */}
-            {/* <Prologue_title2nd text2Anim={text2Anim} /> */}
+            <Prologue_title2nd text2Anim={text2Anim} />
 
             {/* scrollX text output test */}
             <h1
