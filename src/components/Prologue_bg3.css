@@ -1,0 +1,47 @@
+.bgImgWrap-bg3 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    perspective: 240px;
+}
+
+.bgImgWrap-bg3-img {
+    background-image: url('../img/prologueBg3.svg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    position: absolute;
+}
+
+.bgImgWrap-bg3-mask {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+/* .bgImgWrap-bg3-img-left {
+    background-image: url('../img/prologueBg3L.svg');
+    background-size: cover;
+    width: 50vw;
+    height: 100vh;
+    background-position: right center;
+    position: absolute;
+    left: 0;
+}
+
+.bgImgWrap-bg3-img-right {
+    background-image: url('../img/prologueBg3R.svg');
+    background-size: cover;
+    width: 50vw;
+    height: 100vh;
+    background-position: left center;
+    position: absolute;
+    right: 0;
+} */
+
+
+

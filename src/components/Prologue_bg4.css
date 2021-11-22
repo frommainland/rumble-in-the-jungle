@@ -1,0 +1,25 @@
+.bgImgWrap-bg4 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    perspective: 240px;
+}
+
+
+.bgImgWrap-bg4-img {
+    background-image: url('../img/prologueBg4.svg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    position: absolute;
+}
+
+.bgImgWrap-bg4-mask {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

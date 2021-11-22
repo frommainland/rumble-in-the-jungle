@@ -1,0 +1,126 @@
+.bgImgWrap-bg5 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+}
+
+
+.bgImgWrap-bg5-eye1{
+    background-image: url('../img/eye1.svg');
+    width: calc((12/812)*100vw*2);
+    height: calc((12/812)*100vw*2);
+    background-size: cover;
+    position: absolute;
+    left: calc((140/812)*100vw);
+    top: calc((100/812)*100vw);
+}
+
+.bgImgWrap-bg5-eye2{
+    background-image: url('../img/eye2.svg');
+    width: calc((14/812)*100vw*2);
+    height: calc((14.65/812)*100vw*2);
+    background-size: cover;
+    position: absolute;
+    left: calc((200/812)*100vw);
+    top: calc((170/812)*100vw);
+}
+
+.bgImgWrap-bg5-eye3-wrap {
+    display: flex;
+    gap: calc((10/812)*100vw);
+    position: absolute;
+    left: calc((425/812)*100vw);
+    top: calc((190/812)*100vw);
+}
+
+.bgImgWrap-bg5-eye3{
+    background-image: url('../img/eyes3.svg');
+    width: calc((18/812)*100vw*2);
+    height: calc((7.7/812)*100vw*2);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bgImgWrap-bg5-eye4-wrap {
+    display: flex;
+    gap: calc((8/812)*100vw);
+    position: absolute;
+    left: calc((610/812)*100vw);
+    top: calc((280/812)*100vw);
+}
+
+.bgImgWrap-bg5-eye4{
+    background-image: url('../img/eyes4.svg');
+    width: calc((8/812)*100vw*2);
+    height: calc((9/812)*100vw*2);
+    background-size: cover;
+}
+
+
+.bgImgWrap-bg5-eye5-wrap {
+    display: flex;
+    gap: calc((6/812)*100vw);
+    position: absolute;
+    left: calc((690/812)*100vw);
+    top: calc((60/812)*100vw);
+}
+
+.bgImgWrap-bg5-eye5{
+    background-image: url('../img/eyes5.svg');
+    width: calc((9/812)*100vw*2);
+    height: calc((9/812)*100vw*2);
+    background-size: cover;
+}
+
+
+
+
+
+.bgImgWrap-bg5-mask {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.blink {
+    animation: blink 4s cubic-bezier(0.7, 0.1, 0.2, 0.8) infinite;
+}
+
+.delay1 {
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+
+
+.delay2 {
+    animation-delay: 1s;
+    animation-duration: 2s;
+}
+
+.delay-2 {
+    animation-delay: 1.2s;
+    animation-duration: 2s;
+}
+
+.delay3 {
+    animation-delay: .5s;
+    animation-duration: 6s;
+}
+
+.delay4 {
+    animation-delay: 2s;
+    animation-duration: 4s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        transform: scale(1, .05);
+    }
+    5%,
+    95% {
+        transform: scale(1, 1);
+    }
+}
