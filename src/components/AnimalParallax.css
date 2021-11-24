@@ -1,10 +1,31 @@
+.animalParallax-wrap {
+    height: 100%;
+}
 
-.animalBg {
-    width: 232vw;
-    height: 100vh;
-    background-size: cover;
-    position:absolute;
-    left: 0;
+.animalParallax-item {
+    position: absolute;
     top: 0;
-    display: inline-block;
+    left: 0;
+    height: 100%;
+    width: calc((2625/375)*100vh);
+    background-size: cover;
+}
+
+.animalParallax-item-bg6 {
+    background-image: url('../img/animalBg6.svg');
+}
+.animalParallax-item-bg5 {
+    background-image: url('../img/animalBg5.svg');
+}
+.animalParallax-item-bg4 {
+    background-image: url('../img/animalBg4.svg');
+}
+.animalParallax-item-bg3 {
+    background-image: url('../img/animalBg3.svg');
+}
+.animalParallax-item-bg2 {
+    background-image: url('../img/animalBg2.svg');
+}
+.animalParallax-item-bg1 {
+    background-image: url('../img/animalBg1.svg');
 }

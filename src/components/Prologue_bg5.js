@@ -75,29 +75,29 @@ const Prologue_bg5 = () => {
                 animate={show}
             />
 
-            <motion.div className={`bgImgWrap-bg5-eye2 ${eye2Anim ? 'blink delay1' : ''}`}
+            <motion.div className={`bgImgWrap-bg5-eye2 ${eye3Anim ? 'blink delay1' : ''}`}
                 initial={initial}
-                animate={{scale: eye2Anim ? 1 : 0}} />
+                animate={{ scale: eye3Anim ? 1 : 0 }} />
 
             <motion.div className='bgImgWrap-bg5-eye3-wrap'
                 initial={initial}
-                animate={{scale: eye3Anim ? 1 : 0}}>
-                <div className={`bgImgWrap-bg5-eye3 ${eye3Anim ? 'blink delay2' : ''}`} />
-                <div className={`bgImgWrap-bg5-eye3 ${eye3Anim ? 'blink delay2 delay-2' : ''}`} />
+                animate={{ scale: eye5Anim ? 1 : 0 }}>
+                <div className={`bgImgWrap-bg5-eye3 ${eye5Anim ? 'blink delay2' : ''}`} />
+                <div className={`bgImgWrap-bg5-eye3 ${eye5Anim ? 'blink delay2 delay-2' : ''}`} />
             </motion.div>
 
             <motion.div className='bgImgWrap-bg5-eye4-wrap'
                 initial={initial}
-                animate={{scale: eye4Anim ? 1 : 0}}>
+                animate={{ scale: eye4Anim ? 1 : 0 }}>
                 <div className={`bgImgWrap-bg5-eye4 ${eye4Anim ? 'blink delay3' : ''}`} />
                 <div className={`bgImgWrap-bg5-eye4 ${eye4Anim ? 'blink delay3' : ''}`} />
             </motion.div>
 
             <motion.div className='bgImgWrap-bg5-eye5-wrap'
                 initial={initial}
-                animate={{scale: eye5Anim ? 1 : 0}}>
-                <div className={`bgImgWrap-bg5-eye5 ${eye5Anim ? 'blink delay4' : ''}`} />
-                <div className={`bgImgWrap-bg5-eye5 ${eye5Anim ? 'blink delay4' : ''}`} />
+                animate={{ scale: eye2Anim ? 1 : 0 }}>
+                <div className={`bgImgWrap-bg5-eye5 ${eye2Anim ? 'blink delay4' : ''}`} />
+                <div className={`bgImgWrap-bg5-eye5 ${eye2Anim ? 'blink delay4' : ''}`} />
             </motion.div>
 
             {/* <motion.div

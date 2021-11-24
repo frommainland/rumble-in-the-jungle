@@ -68,19 +68,9 @@ export default function Prologue() {
             {/* subtitle - There’s a rumble in the... text */}
             <Prologue_title2nd text2Anim={text2Anim} />
 
-            {/* scrollX text output test */}
-            <h1
-                style={{
-                    position: "fixed",
-                    color: "red",
-                    fontSize: 16,
-                }}
-            >
-                {currentX} & (window.width {size.width})
-            </h1>
             <div style={{
                 height: 10,
-                width: '400vw'
+                width: '500vw'
             }}></div>
 
             {/* hint user to swiper right */}
