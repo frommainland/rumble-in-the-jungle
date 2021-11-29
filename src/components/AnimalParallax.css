@@ -1,5 +1,9 @@
 .animalParallax-wrap {
-    height: 100%;
+    position: relative;
+    height: 96vh;
+    width: calc(700vh - (453/375)*100vh);
+    overflow: hidden;
+    line-height: 0;
 }
 
 .animalParallax-item {
@@ -29,3 +33,5 @@
 .animalParallax-item-bg1 {
     background-image: url('../img/animalBg1.svg');
 }
+
+

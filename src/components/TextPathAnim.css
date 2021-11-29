@@ -1,0 +1,14 @@
+.svg-hiss {
+    position: absolute;
+    /* left: 120vh; */
+    width: calc((616/375)*100vh);
+    height: 100%;
+}
+/* .svg-hiss svg {
+
+} */
+.svg-hiss text {
+    font-family: "MagnatHead-ExtraBold", serif;
+    /* fill: white; */
+    letter-spacing: .3em;
+}
