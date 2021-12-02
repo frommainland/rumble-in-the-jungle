@@ -1,0 +1,15 @@
+.bgImgWrap-bg6-img {
+    background-image: url('../img/prologueBg6.svg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+}
+
+.bgImgWrap-bg6 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    perspective: 240px;
+}

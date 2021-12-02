@@ -1,28 +1,12 @@
-.bgImgWrap {
+/* .prologueWrap {
+    height: 40vh;
     width: 100vw;
-    height: 100vh;
-    position: fixed;
-    overflow: hidden;
-}
+    display: inline-block;
+} */
 
-h1 {
-    margin: 0;
-}
-
-.text-2ndTitle {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    color:white;
-    font-size: 36px;
-    text-align: center;
-    font-family: "CyrulikSharp", sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.text-2ndTitle p {
-    margin: 0;
+.prologueSectionPadding {
+    height: 0.1px;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    bottom: 20%;
+    position: absolute;
 }

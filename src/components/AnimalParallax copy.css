@@ -11,10 +11,8 @@
     width: 100vw;
     height: 96vh;
     position: fixed;
-    /* overflow-y: hidden;
-    overflow-x:scroll; */
-    overflow: hidden;
-    clip-path: ellipse(50% 49% at 50% 50%);
+    overflow-y: hidden;
+    overflow-x:scroll;
 }
 
 .animalParallax-item {
@@ -45,13 +43,12 @@
     background-image: url('../img/animalBg1.svg');
 }
 
-.animalParallax-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #002007;
+.fakebar {
+    height: 10px;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    bottom: 50%;
+    position: absolute;
+    width: 700vh;
 }
 
 

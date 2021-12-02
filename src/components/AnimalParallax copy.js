@@ -27,14 +27,11 @@ const AnimalParallax = () => {
     // const x4 = useTransform(scrollX, [0, prologueEndDis - width, prologueEndDis + scrollDis], [0, 0, -scrollDis / 6])
     // const x5 = useTransform(scrollX, [0, prologueEndDis - width, prologueEndDis + scrollDis], [0, 0, -scrollDis / 9])
 
-    const x1 = useTransform(scrollX, [0, prologueEndDis + 400, prologueEndDis + scrollDis], [0, 0, -scrollDis * 1.4])
-    const x2 = useTransform(scrollX, [0, prologueEndDis + 400, prologueEndDis + scrollDis], [0, 0, -scrollDis * 1.3])
-    const x3 = useTransform(scrollX, [0, prologueEndDis + 400, prologueEndDis + scrollDis], [0, 0, -scrollDis * 1.2])
-    const x4 = useTransform(scrollX, [0, prologueEndDis + 400, prologueEndDis + scrollDis], [0, 0, -scrollDis * 1.15])
-    const x5 = useTransform(scrollX, [0, prologueEndDis + 400, prologueEndDis + scrollDis], [0, 0, -scrollDis * 1.1])
-
-    const opacity = useTransform(scrollX, [0, prologueEndDis, prologueEndDis + 400], [1, 1, 0])
-
+    const x1 = useTransform(scrollX, [0, prologueEndDis - width, prologueEndDis + scrollDis], [0, 0, -scrollDis *1.4])
+    const x2 = useTransform(scrollX, [0, prologueEndDis - width, prologueEndDis + scrollDis], [0, 0, -scrollDis *1.3])
+    const x3 = useTransform(scrollX, [0, prologueEndDis - width, prologueEndDis + scrollDis], [0, 0, -scrollDis *1.2])
+    const x4 = useTransform(scrollX, [0, prologueEndDis - width, prologueEndDis + scrollDis], [0, 0, -scrollDis *1.15])
+    const x5 = useTransform(scrollX, [0, prologueEndDis - width, prologueEndDis + scrollDis], [0, 0, -scrollDis *1.1])
 
 
 
@@ -46,6 +43,8 @@ const AnimalParallax = () => {
                     x: x5
                 }}
             />
+
+
             <motion.div className='animalParallax-item animalParallax-item-bg4'
                 style={{
                     x: x4
@@ -57,7 +56,8 @@ const AnimalParallax = () => {
                 }}
             />
 
-            {/* <TextPathAnim color="#EB3136" /> */}
+            <TextPathAnim color="#EB3136" />
+
 
             <motion.div className='animalParallax-item animalParallax-item-bg2'
                 style={{
@@ -68,13 +68,13 @@ const AnimalParallax = () => {
                 style={{
                     x: x1
                 }} />
-
             <motion.div
-                className='animalParallax-mask'
+                className='fakebar'
                 style={{
-                    opacity: opacity
-                }}
-            />
+                    // left: `${prologueSectionPadding}px`,
+                    // left: prologueEndDis,
+                    width: scrollDis
+                }} />
         </div>
     )
 }

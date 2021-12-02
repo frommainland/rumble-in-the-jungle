@@ -3,6 +3,11 @@ import { motion, useTransform, useViewportScroll, useMotionTemplate, useAnimatio
 import { useEffect } from 'react';
 import { useState } from 'react';
 
+export const minBase = 1500
+export const maxBase = 2000
+export const dis = 200
+export const prologueEndDis = maxBase + dis * 7
+
 const Prologue_bg5 = () => {
 
     const { scrollXProgress, scrollX } = useViewportScroll();
@@ -13,9 +18,8 @@ const Prologue_bg5 = () => {
     const background = useTransform(scrollX, [250, 300], ["rgba(0,0,0,0.3)", "rgba(0,0,0,0)"]);
 
 
-    const minBase = 1500
-    const maxBase = 2000
-    const dis = 200
+
+
 
     const [eye1Anim, setEye1Anim] = useState(false)
     const [eye2Anim, setEye2Anim] = useState(false)

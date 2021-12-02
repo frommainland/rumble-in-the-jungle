@@ -35,9 +35,11 @@ function App() {
 
             {/* ------------test above------------- */}
 
+
             <AnimalParallax />
+            <Prologue />
             {/* <AnimalDetails /> */}
-            {/* <Prologue /> */}
+
 
 
 

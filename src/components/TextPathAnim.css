@@ -1,8 +1,7 @@
 .svg-hiss {
     position: absolute;
     /* left: 120vh; */
-    width: calc((616/375)*100vh);
-    height: 100%;
+    width: calc((616/375)*96vh);
 }
 /* .svg-hiss svg {
 

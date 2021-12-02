@@ -28,10 +28,12 @@
     font-size: calc((80/812)*100vw);
     text-transform: uppercase;
     line-height: calc(70/80);
+    margin: 0;
 }
 
 .title-bottom {
     font-family: "MagnatHead-ExtraBold", serif;
     font-size: calc((60/812)*100vw);
     text-transform: capitalize;
+    margin: 0;
 }

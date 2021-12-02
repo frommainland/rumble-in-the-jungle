@@ -11,7 +11,6 @@ const Prologue_bg1 = () => {
     const Z = useTransform(scrollX, [10, 700], [0, 400])
     const translateZ = useMotionTemplate`translateZ(${Z}px)`
 
-    console.log(Z)
     return (
         <div className='bgImgWrap-bg1'>
             <motion.div

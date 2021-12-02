@@ -5,6 +5,7 @@ import {
 } from "framer-motion";
 import { useEffect, useState } from "react";
 import useWindowSize from "./useWindowSize";
+import useWindowDimensions from "./useWindowDimensions";
 import "../font.css";
 import "./Prologue.css";
 
@@ -18,11 +19,15 @@ import Prologue_bg2 from "./Prologue_bg2";
 import Prologue_bg3 from "./Prologue_bg3";
 import Prologue_bg4 from "./Prologue_bg4";
 import Prologue_bg5 from "./Prologue_bg5";
+import Prologue_bg6 from "./Prologue_bg6";
+import { prologueEndDis } from "./Prologue_bg5";
+
 
 export default function Prologue() {
     const size = useWindowSize();
+    const {width, height} = useWindowDimensions()
     const smooth = [0.4, 0, 0, 1]
-    const { scrollXProgress, scrollX } = useViewportScroll();
+    const { scrollX } = useViewportScroll();
 
     // get the currentx 
     const [currentX, setCurrentX] = useState(0);
@@ -51,8 +56,12 @@ export default function Prologue() {
     }, [scrollX]);
 
 
+
     return (
-        <div>
+        <div className='prologueWrap'>
+            {/* dark leaves */}
+            <Prologue_bg6 />
+
 
             {/* bg5 blink eyes */}
             <Prologue_bg5 />
@@ -68,10 +77,10 @@ export default function Prologue() {
             {/* subtitle - There’s a rumble in the... text */}
             <Prologue_title2nd text2Anim={text2Anim} />
 
-            <div style={{
-                height: 10,
-                width: '500vw'
-            }}></div>
+            <div className='prologueSectionPadding'
+                style={{
+                    width: prologueEndDis + 6.9 * height
+                }}></div>
 
             {/* hint user to swiper right */}
             <SwiperIndicator currentX={currentX} />
