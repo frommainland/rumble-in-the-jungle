@@ -1,15 +1,19 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { useViewportScroll } from "framer-motion";
-import useWindowSize from "./components/useWindowSize";
+import { motion, useViewportScroll, AnimatePresence } from "framer-motion";
+import useWindowDimensions from "./components/useWindowDimensions";
 
 import Prologue from "./components/Prologue";
 import AnimalDetails from './components/AnimalDetails'
 import AnimalParallax from "./components/AnimalParallax";
+import Button_animalFact from "./components/Button_animalFact";
+import Button_animalDetails_close from "./components/Button_animalDetails_close";
+import SvgMask from "./components/SvgMask";
+import { prologueEndDis } from "./components/Prologue_bg5";
 
 function App() {
-    const size = useWindowSize();
-    const scrollDis = size.height * (2625 / 375) - size.width
+    const { width, height } = useWindowDimensions()
+    const scrollDis = height * (2625 / 375) - width
     const [currentX, setCurrentX] = useState(0);
     const { scrollXProgress, scrollX } = useViewportScroll();
     useEffect(() => {
@@ -18,6 +22,10 @@ function App() {
             unsubscribeX();
         };
     });
+
+
+    const [svgOpen, setSvgOpen] = useState(false)
+
     return (
         <div className="App">
 
@@ -30,18 +38,62 @@ function App() {
                     zIndex: 20
                 }}
             >
-                {currentX} & (window.width: {size.width} windows.height: {size.height} *** {scrollDis} ***)
+                {currentX} & (window.width: {width} windows.height: {height} *** {scrollDis} ***)
             </h1>
 
             {/* ------------test above------------- */}
 
+            {/* {!svgOpen && <AnimalParallax />}
+                {!svgOpen && <Prologue />}
+                {svgOpen && <AnimalDetails />} */}
+            {/* <AnimatePresence>
+                {!svgOpen &&
+                    <motion.div
+                        style={{
+                            position: 'fixed',
+                            height: '100px',
+                            width: '100px',
+                            backgroundColor: 'red',
+                            zIndex: 22
+                        }}
+                        exit={{
+                            scale: 0,
+                            transition: {
+                                duration: 5
+                            }
+                        }}
+                        
+                    ></motion.div>}
+            </AnimatePresence>
 
-            <AnimalParallax />
-            <Prologue />
-            {/* <AnimalDetails /> */}
+            <AnimatePresence>
+                {!svgOpen &&
+                    <motion.div
+                        style={{
+                            position: 'fixed',
+                            right: 0,
+                            height: '100px',
+                            width: '100px',
+                            backgroundColor: 'red',
+                            zIndex: 22
+                        }}
+                        exit={{
+                            scale: 0,
+                            transition: {
+                                duration: 5
+                            }
+                        }}
+                        
+                    ></motion.div>}
+            </AnimatePresence> */}
+            <AnimalParallax status={svgOpen} />
+            <Prologue status={svgOpen} />
+            <AnimalDetails status={svgOpen} />
 
 
-
+            <Button_animalFact buttonOpen={setSvgOpen} status={svgOpen} />
+            <Button_animalDetails_close buttonOpen={setSvgOpen} status={svgOpen} />
+            <SvgMask status={svgOpen} />
 
         </div>
 

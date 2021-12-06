@@ -1,0 +1,14 @@
+.button_animalDetails_close {
+    position: fixed;
+    width: calc((64/375) *100vh);
+    height: calc((64/375) *100vh);
+    z-index: 300;
+    background-image: url('../img/button_animalDetails_close.svg');
+    right: 160px;
+    top: 0;
+    background-color: Transparent;
+    /* background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; */
+}

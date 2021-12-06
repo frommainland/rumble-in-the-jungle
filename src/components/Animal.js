@@ -1,6 +1,6 @@
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
-import useWindowSize from "./useWindowSize";
+import useWindowDimensions from "./useWindowDimensions";
 import Animal_img from "./Animal_img";
 import Animal_metric from "./Animal_metric";
 import Animal_quote from "./Animal_quote";
@@ -25,7 +25,7 @@ const Animal = (props) => {
     const testY = useTransform(scrollY, [0, 100], [0, 100], { clamp: false });
     // test
 
-    const size = useWindowSize();
+    const {width, height} = useWindowDimensions()
 
     // text title anim
     const [titleAnim, setTitleAnim] = useState(false);
@@ -36,7 +36,7 @@ const Animal = (props) => {
 
     useEffect(() => {
         scrollY.onChange((value) => {
-            if (value >= size.width / 10) {
+            if (value >= width / 10) {
                 setTitleAnim(true);
             } else {
                 setTitleAnim(false);

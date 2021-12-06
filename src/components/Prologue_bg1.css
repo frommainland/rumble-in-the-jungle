@@ -4,6 +4,8 @@
     width: 100vw;
     height: 100vh;
     background-position: center center;
+    -webkit-animation: squigglevision 0.34s linear infinite;
+    animation: squigglevision 0.34s linear infinite;
 }
 
 .bgImgWrap-bg1 {
@@ -12,4 +14,5 @@
     position: fixed;
     overflow: hidden;
     perspective: 240px;
+
 }

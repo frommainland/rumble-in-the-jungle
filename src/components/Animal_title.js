@@ -2,7 +2,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./Animal_title.css";
 
+import useWindowDimensions from "./useWindowDimensions";
+import { prologueEndDis } from "./Prologue_bg5";
+
 export default function Animal_title(props) {
+
+    const { width } = useWindowDimensions()
+
     const smooth = [0.4, 0, 0, 1];
 
     //reverse cubic-bezier
@@ -68,10 +74,10 @@ export default function Animal_title(props) {
             }}
             initial="initial"
             animate="start"
-            // staggerChildren not working, so put all divs in delay controls
-            // transition={{
-            //     staggerChildren: 0.1,
-            // }}
+        // staggerChildren not working, so put all divs in delay controls
+        // transition={{
+        //     staggerChildren: 0.1,
+        // }}
         >
             <AnimatePresence>
                 {animalName.map((item, i) => (

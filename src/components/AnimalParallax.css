@@ -9,12 +9,17 @@
 
 .animalParallax-wrap {
     width: 100vw;
-    height: 96vh;
+    height: 100vh;
     position: fixed;
     /* overflow-y: hidden;
     overflow-x:scroll; */
     overflow: hidden;
-    clip-path: ellipse(50% 49% at 50% 50%);
+    -webkit-clip-path: ellipse(50% 50% at 50% 50%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: scale(.5);
+
 }
 
 .animalParallax-item {

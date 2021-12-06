@@ -19,6 +19,7 @@ const Prologue_title = (props) => {
             className='title-wrap'
             style={{
                 scale: props.textScale,
+                opacity: props.opacity
             }}
         >
             <div className='title-top-wrap'>

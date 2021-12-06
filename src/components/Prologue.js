@@ -2,9 +2,9 @@ import {
     motion,
     useViewportScroll,
     useTransform,
+    AnimatePresence
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import useWindowSize from "./useWindowSize";
 import useWindowDimensions from "./useWindowDimensions";
 import "../font.css";
 import "./Prologue.css";
@@ -22,10 +22,11 @@ import Prologue_bg5 from "./Prologue_bg5";
 import Prologue_bg6 from "./Prologue_bg6";
 import { prologueEndDis } from "./Prologue_bg5";
 
+import { map } from "./mathUtils";
 
-export default function Prologue() {
-    const size = useWindowSize();
-    const {width, height} = useWindowDimensions()
+
+export default function Prologue(props) {
+    const { width, height } = useWindowDimensions()
     const smooth = [0.4, 0, 0, 1]
     const { scrollX } = useViewportScroll();
 
@@ -39,7 +40,8 @@ export default function Prologue() {
     });
 
     // text 'rumble in the jungle' anim
-    const textScale = useTransform(scrollX, [0, 150], [1, 26]);
+    const textScale = useTransform(scrollX, [0, 250], [1, 32]);
+    const opacity = useTransform(scrollX, [0, 250, 350], [1, 1, 0]);
 
 
     // text 'good studio presents' anim, based on scrollx to trigger anim
@@ -56,35 +58,45 @@ export default function Prologue() {
     }, [scrollX]);
 
 
+    const scrollDis = map(7 * height, prologueEndDis + 400, prologueEndDis + 7 * height, 0, -7 * height * 1.4)
+
 
     return (
-        <div className='prologueWrap'>
-            {/* dark leaves */}
-            <Prologue_bg6 />
+        <AnimatePresence>
+            {!props.status && (
+                <div className='prologueWrap' style={{
+                    // display: props.status ? "none" : 'block', 
+                }}
+                >
+
+                    {/* dark leaves */}
+                    <Prologue_bg6 />
 
 
-            {/* bg5 blink eyes */}
-            <Prologue_bg5 />
+                    {/* bg5 blink eyes */}
+                    <Prologue_bg5 />
 
-            <Prologue_bg4 />
-            <Prologue_bg3 />
-            <Prologue_bg2 />
-            <Prologue_bg1 />
+                    <Prologue_bg4 />
+                    <Prologue_bg3 />
+                    <Prologue_bg2 />
+                    <Prologue_bg1 />
 
-            {/* rumble in jungle text */}
-            <Prologue_title textScale={textScale} />
+                    {/* rumble in jungle text */}
+                    <Prologue_title textScale={textScale} opacity={opacity} />
 
-            {/* subtitle - There’s a rumble in the... text */}
-            <Prologue_title2nd text2Anim={text2Anim} />
+                    {/* subtitle - There’s a rumble in the... text */}
+                    <Prologue_title2nd text2Anim={text2Anim} />
 
-            <div className='prologueSectionPadding'
-                style={{
-                    width: prologueEndDis + 6.9 * height
-                }}></div>
+                    <div className='prologueSectionPadding'
+                        style={{
+                            width: prologueEndDis + 7 * height
+                        }}></div>
 
-            {/* hint user to swiper right */}
-            <SwiperIndicator currentX={currentX} />
+                    {/* hint user to swiper right */}
+                    <SwiperIndicator currentX={currentX} />
 
-        </div>
+                </div>
+            )}
+        </AnimatePresence>
     );
 }

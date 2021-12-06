@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import useInView from "react-cool-inview";
-import useWindowSize from "./useWindowSize";
+import useWindowDimensions from "./useWindowDimensions";
 import {
     motion,
     useViewportScroll,
@@ -37,9 +37,10 @@ const Animal_img = (props) => {
         setBoxTop(wrapperRef.current.getBoundingClientRect().y);
     }, []);
 
-    const size = useWindowSize();
+
+    const {width, height} = useWindowDimensions()
     const { scrollY } = useViewportScroll();
-    const y = useTransform(scrollY, [boxTop, boxTop + size.height], [0, -size.height/5], { clamp: false });
+    const y = useTransform(scrollY, [boxTop, boxTop + height], [0, -height/5], { clamp: false });
 
     return (
         <motion.div

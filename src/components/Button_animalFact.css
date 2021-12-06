@@ -1,0 +1,11 @@
+.animalFact {
+    position: fixed;
+    bottom: calc((34/375)*100vh);
+    font-size: 24px;
+    color: white;
+    background-color: #002007;
+    border-radius: 100px;
+    font-family: "MagnatHead-ExtraBold", serif;
+    padding: 12px 24px;
+    z-index: 300;
+}
