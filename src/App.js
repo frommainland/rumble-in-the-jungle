@@ -9,6 +9,7 @@ import AnimalParallax from "./components/AnimalParallax";
 import Button_animalFact from "./components/Button_animalFact";
 import Button_animalDetails_close from "./components/Button_animalDetails_close";
 import SvgMask from "./components/SvgMask";
+import { smooth } from "./components/easing";
 import { prologueEndDis } from "./components/Prologue_bg5";
 
 function App() {
@@ -26,10 +27,37 @@ function App() {
 
     const [svgOpen, setSvgOpen] = useState(false)
 
+
+
+
+
+
+    {/* ------------Button_animalFact below------------- */ }
+
+    const [anim, setAnim] = useState(false)
+    // useEffect(() => {
+    //     scrollX.onChange((value) => {
+    //         if (value >= prologueEndDis + 7 * height - width) {
+    //             setAnim(true)
+    //         } else {
+    //             setAnim(false)
+    //         }
+    //     });
+    // }, [scrollX]);
+
+    useEffect(() => {
+        scrollX.onChange((value) => {
+            if (value >= 200) {
+                setAnim(true)
+            } else {
+                setAnim(false)
+            }
+        });
+    }, [scrollX]);
+
     return (
         <div className="App">
 
-            {/* scrollX text output test */}
             <h1
                 style={{
                     position: "fixed",
@@ -43,55 +71,74 @@ function App() {
 
             {/* ------------test above------------- */}
 
-            {/* {!svgOpen && <AnimalParallax />}
-                {!svgOpen && <Prologue />}
-                {svgOpen && <AnimalDetails />} */}
-            {/* <AnimatePresence>
-                {!svgOpen &&
+
+
+
+            <AnimatePresence initial={false}>
+                {!svgOpen && (
                     <motion.div
                         style={{
-                            position: 'fixed',
-                            height: '100px',
-                            width: '100px',
-                            backgroundColor: 'red',
-                            zIndex: 22
+                            position: 'relative',
+                            opacity: 0,
+                            y: -20,
                         }}
-                        exit={{
-                            scale: 0,
+                        animate={{
+                            opacity: 1,
+                            y: 0,
                             transition: {
-                                duration: 5
+                                delay: 1,
+                                duration: 1,
+                                ease: smooth
                             }
                         }}
-                        
-                    ></motion.div>}
+                        exit={{
+                            opacity: 0,
+                            y: -20,
+                            transition: {
+                                duration: 1,
+                                ease: smooth
+                            }
+                        }}>
+                        <AnimalParallax />
+                        <Prologue />
+                    </motion.div>
+                )}
             </AnimatePresence>
 
             <AnimatePresence>
-                {!svgOpen &&
-                    <motion.div
+                {svgOpen && (
+                    <motion.div className='svgOpen-animaldetails'
                         style={{
-                            position: 'fixed',
-                            right: 0,
-                            height: '100px',
-                            width: '100px',
-                            backgroundColor: 'red',
-                            zIndex: 22
+                            position: 'relative',
+                            opacity: 0,
+                            y: 20
                         }}
-                        exit={{
-                            scale: 0,
+                        animate={{
+                            opacity: 1,
+                            y: 0,
                             transition: {
-                                duration: 5
+                                delay: 1,
+                                duration: 1,
+                                ease: smooth
                             }
                         }}
-                        
-                    ></motion.div>}
-            </AnimatePresence> */}
-            <AnimalParallax status={svgOpen} />
-            <Prologue status={svgOpen} />
-            <AnimalDetails status={svgOpen} />
-
+                        exit={{
+                            position: 'relative',
+                            opacity: 0,
+                            y: 20,
+                            transition: {
+                                duration: 1,
+                                ease: smooth
+                            }
+                        }}
+                    >
+                        <AnimalDetails />
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <Button_animalFact buttonOpen={setSvgOpen} status={svgOpen} />
+
             <Button_animalDetails_close buttonOpen={setSvgOpen} status={svgOpen} />
             <SvgMask status={svgOpen} />
 

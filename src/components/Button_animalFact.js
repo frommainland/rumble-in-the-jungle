@@ -1,5 +1,5 @@
 import './Button_animalFact.css'
-import { motion, useViewportScroll } from 'framer-motion'
+import { AnimatePresence, motion, useViewportScroll } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { prologueEndDis } from "./Prologue_bg5";
 import useWindowDimensions from "./useWindowDimensions";
@@ -19,33 +19,38 @@ const Button_animalFact = (props) => {
         });
     }, [scrollX]);
 
-    const start = {
-        y: -30,
-        scale: 1,
-        opacity: 1,
+    const inital = {
+        left: '50%',
+        x: '-50%',
+        scale: 0.8,
+        opacity: 0
+    }
+    const transition = {
         transition: {
-            ease: smooth,
+            ease: smooth
         }
     }
-
-
     return (
-        <motion.button
-            style={{
-                left: '50%',
-                x: '-50%',
-                opacity: 0,
-                scale: 0.8
-            }}
-            animate={anim ? start : {}}
-            className='animalFact'
-            onClick={() => {
-                props.buttonOpen(!props.status);
+        <AnimatePresence>
+            {anim && (<motion.button
+                style={inital}
+                animate={{
+                    scale: 1,
+                    opacity: 1,
+                    ...transition
+                }}
+                exit={{ ...inital, ...transition }}
+
+                className='animalFact'
+                onClick={() => {
+                    props.buttonOpen(!props.status);
+                }
+                }>
+                Animal fun facts ↓ <br />
+                {props.status ? "true" : 'false'}
+            </motion.button >)
             }
-            }>
-            Animal fun facts ↓ <br />
-            {props.status ? "true" : 'false'}
-        </motion.button >
+        </AnimatePresence >
     )
 
 }

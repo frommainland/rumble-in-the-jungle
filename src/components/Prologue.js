@@ -62,41 +62,35 @@ export default function Prologue(props) {
 
 
     return (
-        <AnimatePresence>
-            {!props.status && (
-                <div className='prologueWrap' style={{
-                    // display: props.status ? "none" : 'block', 
-                }}
-                >
 
-                    {/* dark leaves */}
-                    <Prologue_bg6 />
+        <div className='prologueWrap'>
+
+            {/* dark leaves */}
+            <Prologue_bg6 />
 
 
-                    {/* bg5 blink eyes */}
-                    <Prologue_bg5 />
+            {/* bg5 blink eyes */}
+            <Prologue_bg5 />
 
-                    <Prologue_bg4 />
-                    <Prologue_bg3 />
-                    <Prologue_bg2 />
-                    <Prologue_bg1 />
+            <Prologue_bg4 />
+            <Prologue_bg3 />
+            <Prologue_bg2 />
+            <Prologue_bg1 />
 
-                    {/* rumble in jungle text */}
-                    <Prologue_title textScale={textScale} opacity={opacity} />
+            {/* rumble in jungle text */}
+            <Prologue_title textScale={textScale} opacity={opacity} />
 
-                    {/* subtitle - There’s a rumble in the... text */}
-                    <Prologue_title2nd text2Anim={text2Anim} />
+            {/* subtitle - There’s a rumble in the... text */}
+            <Prologue_title2nd text2Anim={text2Anim} />
 
-                    <div className='prologueSectionPadding'
-                        style={{
-                            width: prologueEndDis + 7 * height
-                        }}></div>
+            <div className='prologueSectionPadding'
+                style={{
+                    width: prologueEndDis + 7 * height
+                }}></div>
 
-                    {/* hint user to swiper right */}
-                    <SwiperIndicator currentX={currentX} />
+            {/* hint user to swiper right */}
+            <SwiperIndicator currentX={currentX} />
 
-                </div>
-            )}
-        </AnimatePresence>
+        </div>
     );
 }

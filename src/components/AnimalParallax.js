@@ -40,59 +40,45 @@ const AnimalParallax = (props) => {
 
 
     return (
-        <AnimatePresence>
-            {!props.status && (
-                <motion.div
-                    className='animalParallax-wrap'
-                    key='AnimalParallax'
-                    initial={{
-                        scale: 1
-                    }}
-                // exit={{
-                //     scale: .2,
-                //     transition: {
-                //         duration: 5
-                //     }
-                // }}
-                >
-                    <motion.div className='animalParallax-item animalParallax-item-bg6' />
-                    <motion.div className='animalParallax-item animalParallax-item-bg5'
-                        style={{
-                            x: x5
-                        }}
-                    />
-                    <motion.div className='animalParallax-item animalParallax-item-bg4'
-                        style={{
-                            x: x4
-                        }}
-                    />
-                    <motion.div className='animalParallax-item animalParallax-item-bg3'
-                        style={{
-                            x: x3
-                        }}
-                    />
+        <motion.div
+            className='animalParallax-wrap'
+        >
+            <motion.div className='animalParallax-item animalParallax-item-bg6' />
+            <motion.div className='animalParallax-item animalParallax-item-bg5'
+                style={{
+                    x: x5
+                }}
+            />
+            <motion.div className='animalParallax-item animalParallax-item-bg4'
+                style={{
+                    x: x4
+                }}
+            />
+            <motion.div className='animalParallax-item animalParallax-item-bg3'
+                style={{
+                    x: x3
+                }}
+            />
 
-                    {/* <TextPathAnim color="#EB3136" /> */}
+            {/* <TextPathAnim color="#EB3136" /> */}
 
-                    <motion.div className='animalParallax-item animalParallax-item-bg2'
-                        style={{
-                            x: x2
-                        }}
-                    />
-                    <motion.div className='animalParallax-item animalParallax-item-bg1'
-                        style={{
-                            x: x1
-                        }} />
+            <motion.div className='animalParallax-item animalParallax-item-bg2'
+                style={{
+                    x: x2
+                }}
+            />
+            <motion.div className='animalParallax-item animalParallax-item-bg1'
+                style={{
+                    x: x1
+                }} />
 
-                    <motion.div
-                        className='animalParallax-mask'
-                        style={{
-                            opacity: opacity
-                        }}
-                    />
-                </motion.div>
-            )}
-        </AnimatePresence>
+            <motion.div
+                className='animalParallax-mask'
+                style={{
+                    opacity: opacity
+                }}
+            />
+        </motion.div>
     )
 }
 

@@ -1,6 +1,7 @@
-/* .prologueWrap {
-    height: 100%;
-} */
+.prologueWrap {
+    height: 1vh;
+    /* HACK - 1vh height to make div scrollable */
+}
 
 .prologueSectionPadding {
     height: 0.1px;

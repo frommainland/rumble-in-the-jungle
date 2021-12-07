@@ -97,9 +97,11 @@ export default function Animal_title(props) {
                                     duration: 0.8,
                                     ease: smooth,
                                     delay:
-                                        0.05 * i +
-                                        animalName.length * 0.05 +
-                                        0.45,
+                                        props.currentPage === 0
+                                            ?
+                                            0.05 * i + animalName.length * 0.05 + 0.45 + 1
+                                            :
+                                            0.05 * i + animalName.length * 0.05 + 0.45
                                 },
                             },
                         }}
