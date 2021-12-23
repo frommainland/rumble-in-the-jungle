@@ -2,6 +2,9 @@
     width: 86%;
   }
 
+  .swiper-slide:last-child {
+      width: 100%;
+  }
   .animalDetails-wrap {
       position: relative;
       background-color: #002D0A;

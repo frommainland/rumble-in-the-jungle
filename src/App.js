@@ -24,17 +24,22 @@ function App() {
         };
     });
 
-
     const [svgOpen, setSvgOpen] = useState(false)
 
-
+    // useEffect(() => {
+    //     if (!svgOpen) {
+    //         window.scrollTo(prologueEndDis + 7 * height, 0)
+    //     } else {
+    //         window.scrollTo(0, 0)
+    //     }
+    // }, [svgOpen])
 
 
 
 
     {/* ------------Button_animalFact below------------- */ }
 
-    const [anim, setAnim] = useState(false)
+    // const [anim, setAnim] = useState(false)
     // useEffect(() => {
     //     scrollX.onChange((value) => {
     //         if (value >= prologueEndDis + 7 * height - width) {
@@ -45,15 +50,15 @@ function App() {
     //     });
     // }, [scrollX]);
 
-    useEffect(() => {
-        scrollX.onChange((value) => {
-            if (value >= 200) {
-                setAnim(true)
-            } else {
-                setAnim(false)
-            }
-        });
-    }, [scrollX]);
+    // useEffect(() => {
+    //     scrollX.onChange((value) => {
+    //         if (value >= 200) {
+    //             setAnim(true)
+    //         } else {
+    //             setAnim(false)
+    //         }
+    //     });
+    // }, [scrollX]);
 
     return (
         <div className="App">
@@ -62,8 +67,9 @@ function App() {
                 style={{
                     position: "fixed",
                     color: "red",
-                    fontSize: 16,
-                    zIndex: 20
+                    fontSize: 6,
+                    zIndex: 20,
+                    bottom: 0
                 }}
             >
                 {currentX} & (window.width: {width} windows.height: {height} *** {scrollDis} ***)
@@ -74,7 +80,7 @@ function App() {
 
 
 
-            <AnimatePresence initial={false}>
+            {/* <AnimatePresence initial={false}>
                 {!svgOpen && (
                     <motion.div
                         style={{
@@ -98,7 +104,10 @@ function App() {
                                 duration: 1,
                                 ease: smooth
                             }
-                        }}>
+                        }}
+                        onAnimationComplete={() =>
+                            window.scrollTo(prologueEndDis + 7 * height, 0)
+                        }>
                         <AnimalParallax />
                         <Prologue />
                     </motion.div>
@@ -135,10 +144,11 @@ function App() {
                         <AnimalDetails />
                     </motion.div>
                 )}
-            </AnimatePresence>
+            </AnimatePresence> */}
+
+            <AnimalDetails />
 
             <Button_animalFact buttonOpen={setSvgOpen} status={svgOpen} />
-
             <Button_animalDetails_close buttonOpen={setSvgOpen} status={svgOpen} />
             <SvgMask status={svgOpen} />
 

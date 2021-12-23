@@ -5,6 +5,7 @@ import "./Animal_title.css";
 import useWindowDimensions from "./useWindowDimensions";
 import { prologueEndDis } from "./Prologue_bg5";
 
+
 export default function Animal_title(props) {
 
     const { width } = useWindowDimensions()
@@ -26,6 +27,7 @@ export default function Animal_title(props) {
         "Giraffe",
         "Crocodile",
         "Toucan",
+        " "
     ];
 
     const color = [
@@ -40,9 +42,18 @@ export default function Animal_title(props) {
 
     const [anim, setAnim] = useState(false);
 
+    // animatepresence required a delay, only when the page is rendered
+    const [delay, setDelay] = useState(true)
+
     useEffect(() => {
         setAnim(props.offset > 50 ? true : false);
     }, [props.offset]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setDelay(false)
+        }, 1000);
+    })
 
     // const string = Array.from(animalName_data[0]);
 
@@ -96,12 +107,19 @@ export default function Animal_title(props) {
                                 transition: {
                                     duration: 0.8,
                                     ease: smooth,
+                                    // delay:
+                                    //     props.currentPage === 0
+                                    //         ?
+                                    //         0.05 * i + animalName.length * 0.05 + 0.45 + 1
+                                    //         :
+                                    //         0.05 * i + animalName.length * 0.05 + 0.45
                                     delay:
-                                        props.currentPage === 0
+                                        delay
                                             ?
-                                            0.05 * i + animalName.length * 0.05 + 0.45 + 1
+                                            0.05 * i + animalName.length * 0.05 + 0.25 + 1
                                             :
-                                            0.05 * i + animalName.length * 0.05 + 0.45
+                                            0.05 * i + animalName.length * 0.05 + 0.25
+
                                 },
                             },
                         }}

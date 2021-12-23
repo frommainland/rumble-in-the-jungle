@@ -37,7 +37,9 @@ const Button_animalFact = (props) => {
                 animate={{
                     scale: 1,
                     opacity: 1,
-                    ...transition
+                    transition: {
+                        ease: smooth,
+                    }
                 }}
                 exit={{ ...inital, ...transition }}
 

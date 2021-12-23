@@ -1,0 +1,151 @@
+.animal-end-wrap {
+    width: 100vw;
+    position: relative;
+}
+
+
+.animal-end-tiger {
+    width: calc((120/812)*100vw);
+    height: auto;
+    left: calc((175/812)*100vw);
+    top: calc((-20/812)*100vw);
+    position: absolute;
+}
+.animal-end-monkey {
+    position: absolute;
+    left: calc((640/812)*100vw);
+    top: calc((40/812)*100vw);
+    width: calc((122/812)*100vw);
+    height: auto;
+}
+.animal-end-toucan {
+    position: absolute;
+    left: calc((80/812)*100vw);
+    top: calc((200/812)*100vw);
+    width: calc((70/812)*100vw);
+    height: auto;
+}
+.animal-end-giraf {
+    position: absolute;
+    left: calc((630/812)*100vw);
+    top: calc((220/812)*100vw);
+    width: calc((120/812)*100vw);
+    height: auto;
+}
+.animal-end-elephant {
+    position: absolute;
+    left: calc((150/812)*100vw);
+    top: calc((190/812)*100vw);
+    width: calc((140/812)*100vw);
+    height: auto;
+}
+.animal-end-aligator {
+    position: absolute;
+    left: calc((500/812)*100vw);
+    top: calc((80/812)*100vw);
+    width: calc((205/812)*100vw);
+    height: auto;
+}
+
+.animal-end-badge {
+    position: absolute;
+    top: calc((25/812)*100vw);
+    width: calc((300/812)*100vw);
+    height: auto;
+}
+
+.animal-end-textWrap {
+    text-align: center;
+    position: relative;
+    top: calc((320/812)*100vw);
+}
+
+
+
+
+.animal-end-textWrap p{
+    color: white;
+    font-size: calc((26/812)*100vw);
+    margin: 0;
+    font-family: "MagnatHead-Medium", serif;
+}
+
+.animal-end-titleWrap {
+    display: inline-flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.animal-end-titleWrap h1{
+    color: white;
+    font-size: calc((40/812)*100vw);
+    margin: calc((8/812)*100vw) 0;
+    font-family: "MagnatHead-ExtraBold", serif;
+    display: inline-block;
+}
+
+.badgeScene {
+    position: absolute;
+    top: calc((70/812)*100vw);
+    left: 50%;
+    transform:translateX(-50%);
+    width: calc((300/812)*100vw);
+    height: calc((300/812)*100vw);
+    perspective: 1000px;
+}
+
+.badgeScene-badge {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.badgeScene-badege-front {
+    position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.badgeScene-badege-back {
+    position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform: rotateY( 180deg );
+}
+
+/* button */
+.animal-end-buttonWrap {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    gap: 5%;
+    position: relative;
+    top: calc((370/812)*100vw);
+}
+
+
+.animal-end-button1 {
+    position: relative;
+    display: inline-block;
+    font-size: calc((24/812)*100vw);
+    color: white;
+    background-color: #002007;
+    border-radius: 100px;
+    font-family: "MagnatHead-ExtraBold", serif;
+    padding: 12px 24px;
+}
+
+.animal-end-button2 {
+    position: relative;
+    display: inline-block;
+    font-size: calc((24/812)*100vw);
+    color: white;
+    background-color: #002D0A;
+    border: 3px solid #005217;
+    border-radius: 100px;
+    font-family: "MagnatHead-ExtraBold", serif;
+    padding: 12px 24px;
+}

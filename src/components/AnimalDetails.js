@@ -12,6 +12,7 @@ import Animal_title from "./Animal_title";
 import Animal from "./Animal";
 import React, { useEffect, useState } from "react";
 import { prologueEndDis } from "./Prologue_bg5";
+import Animal_end from "./Animal_end";
 
 const AnimalDetails = (props) => {
     const { width, height } = useWindowDimensions()
@@ -43,21 +44,26 @@ const AnimalDetails = (props) => {
             className='animalDetails-wrap'
             key='AnimalDetails'
         >
-            <Animal_title currentPage={currentPage} offset={offset} status={props.status}/>
+
+            {/* animal title */}
+            <Animal_title currentPage={currentPage} offset={offset} status={props.status} />
+
             <Swiper
                 spaceBetween={0}
                 slidesPerView={"auto"}
                 autoHeight={true}
-                onActiveIndexChange={(current) => {
-                    setCurrentPage(current.activeIndex);
-                }}
                 onSlideChange={scrollToTop}
+                onSlideChangeTransitionEnd={(e) => setCurrentPage(e.activeIndex)}
 
+            // onActiveIndexChange={(current) => {
+            //     setCurrentPage(current.activeIndex);
+            // }}
             // onActiveIndexChange={(current) =>
             //     console.log(current.activeIndex)
             // }
             // onSwiper={(swiper) => console.log(swiper)}
             >
+
                 <SwiperSlide>
                     <Animal
                         title={Animal_data.elephant.title}
@@ -151,6 +157,9 @@ const AnimalDetails = (props) => {
                         color={Animal_data.toucan.color}
                         sound={Animal_data.toucan.sound}
                     />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Animal_end current={currentPage} index={6} />
                 </SwiperSlide>
             </Swiper>
         </motion.div>
