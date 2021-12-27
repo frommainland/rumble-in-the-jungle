@@ -1,13 +1,21 @@
 import { useState, useRef, useEffect } from 'react'
-import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useViewportScroll } from 'framer-motion';
 import './TextPathAnim.css'
 import useInView from "react-cool-inview";
 import useWindowSize from './useWindowSize';
 import { useScrollData } from "scroll-data-hook";
 import useWindowDimensions from './useWindowDimensions';
 
-// Map number x from range [a, b] to [c, d]
-const map = (x, a, b, c, d) => (x - a) * (d - c) / (b - a) + c;
+
+const map = (x, a, b, c, d, clamp) => {
+    const map_result = (x - a) * (d - c) / (b - a) + c;
+    if (clamp) {
+        const clamp_result = Math.max(Math.min(map_result, Math.max(a, b)), Math.min(a, b));
+        return clamp_result
+    }
+
+    return map_result;
+}
 
 const color = [
     "#FCD342",
@@ -20,7 +28,7 @@ const color = [
 ];
 
 
-const TextPathAnim = (props) => {
+const TextPathAnim2 = (props) => {
 
     const { speed } = useScrollData()
 
@@ -31,8 +39,7 @@ const TextPathAnim = (props) => {
     const [currentX, setCurrentX] = useState(0);
     const { scrollXProgress, scrollX } = useViewportScroll();
     useEffect(() => {
-        // const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()));
-        const unsubscribeX = scrollX.onChange((v) => setCurrentX(v));
+        const unsubscribeX = scrollX.onChange((v) => setCurrentX(v.toFixed()));
         return () => {
             unsubscribeX();
         };
@@ -56,26 +63,26 @@ const TextPathAnim = (props) => {
     const calStartOffset = map(props.x.current, 0, -height * 7 * 1.2 / 8, pathLength, 0)
 
 
-    const fontScale = map(calStartOffset, 0, pathLength, 1, 32)
+    const fontScale = map(calStartOffset, 0, pathLength, 1, 32, true)
     const letterSpacing = map(calStartOffset, 0, pathLength, 2, 0)
-
     const { observe, inView } = useInView({
         // Stop observe when the target enters the viewport, so the "inView" only triggered once
         unobserveOnEnter: false,
         // Shrink the root margin, so the animation will be triggered once the target reach a fixed amount of visible
-        // rootMargin: "-50px",
+        // rootMargin: "0px 0px 0px -40px",
     });
 
     return (
         <motion.div className="svg-hiss" ref={svgWrap} style={{
             x: props.x,
-            top: props.top
+            top: props.top,
+            left: '50vw'
         }}>
-            <svg ref={observe} viewBox="0 0 616 367" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg ref={observe} viewBox="0 -50 482 297" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <filter id="f1">
                     <feGaussianBlur in="SourceGraphic" stdDeviation={svgBlur} />
                 </filter>
-                <path id="text-hiss" ref={pathRef} d="M1 367C129.9 366.2 263.9 334.3 362.6 247.3C410.9 209.3 468.2 114.6 403.2 67.7C371.5 50.9 325.4 55.3 302.5 84C280 112.3 277.5 165.7 303.2 192.8C319.4 209.9 348.7 213.8 371 214.3C401.5 215.1 432.2 208.5 460.8 198.3C468.3 195.6 475.7 192.6 483 189.4C557.4 154.9 602.1 79.8 615 1" stroke="none" />
+                <path id="text-hiss2" ref={pathRef} d="M1 17.0003C149 -20.333 452.2 -16.7997 481 296" stroke="none" />
 
                 {/* ------filter blur causes performance issue----------- */}
                 {/* <text filter="url(#f1)" fontSize={`${inView ? fontScale / size.height * 100 : 0}vh`} fill={props.color}>
@@ -84,8 +91,8 @@ const TextPathAnim = (props) => {
                     </textPath>
                 </text> */}
 
-                <text fontSize={20} fill={props.color}>
-                    <textPath startOffset={inView ? calStartOffset : 0} href="#text-hiss" fontSize={inView ? fontScale * props.fontScaleFactor : 0} letterSpacing={props.letterSpacing}>
+                <text fill={props.color}>
+                    <textPath startOffset={inView ? calStartOffset : 0} href="#text-hiss2" fontSize={inView ? fontScale * props.fontScaleFactor : 0} letterSpacing={props.letterSpacing}>
                         {props.text}
                     </textPath>
                 </text>
@@ -98,5 +105,5 @@ const TextPathAnim = (props) => {
     )
 }
 
-export default TextPathAnim
+export default TextPathAnim2
 

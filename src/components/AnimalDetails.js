@@ -53,7 +53,10 @@ const AnimalDetails = (props) => {
                 slidesPerView={"auto"}
                 autoHeight={true}
                 onSlideChange={scrollToTop}
-                onSlideChangeTransitionEnd={(e) => setCurrentPage(e.activeIndex)}
+                onSlideChangeTransitionEnd={(e) => {
+                    setCurrentPage(e.activeIndex)
+                    props.sendCurrentPage(e.activeIndex)
+                }}
 
             // onActiveIndexChange={(current) => {
             //     setCurrentPage(current.activeIndex);

@@ -1,6 +1,5 @@
 .svg-hiss {
     position: absolute;
-    /* left: 120vh; */
     width: calc((616/375)*96vh);
 }
 /* .svg-hiss svg {
@@ -9,5 +8,5 @@
 .svg-hiss text {
     font-family: "MagnatHead-ExtraBold", serif;
     /* fill: white; */
-    letter-spacing: .3em;
+    /* letter-spacing: 2px; */
 }

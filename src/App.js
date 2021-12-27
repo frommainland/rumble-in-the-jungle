@@ -25,6 +25,8 @@ function App() {
     });
 
     const [svgOpen, setSvgOpen] = useState(false)
+    const [swiperCurrent, setSwiperCurrent] = useState(0)
+
 
     // useEffect(() => {
     //     if (!svgOpen) {
@@ -67,7 +69,7 @@ function App() {
                 style={{
                     position: "fixed",
                     color: "red",
-                    fontSize: 6,
+                    fontSize: 16,
                     zIndex: 20,
                     bottom: 0
                 }}
@@ -80,7 +82,7 @@ function App() {
 
 
 
-            {/* <AnimatePresence initial={false}>
+            <AnimatePresence initial={false}>
                 {!svgOpen && (
                     <motion.div
                         style={{
@@ -141,15 +143,14 @@ function App() {
                             }
                         }}
                     >
-                        <AnimalDetails />
+                        <AnimalDetails sendCurrentPage={(page) => setSwiperCurrent(page)} />
                     </motion.div>
                 )}
-            </AnimatePresence> */}
+            </AnimatePresence>
 
-            <AnimalDetails />
 
             <Button_animalFact buttonOpen={setSvgOpen} status={svgOpen} />
-            <Button_animalDetails_close buttonOpen={setSvgOpen} status={svgOpen} />
+            <Button_animalDetails_close buttonOpen={setSvgOpen} status={svgOpen} currentPage={swiperCurrent}/>
             <SvgMask status={svgOpen} />
 
         </div>

@@ -4,8 +4,9 @@
     height: calc((64/375) *100vh);
     z-index: 300;
     background-image: url('../img/button_animalDetails_close.svg');
-    left: calc((650/375)*100vh);
-    top: calc((44/375)*100vh);
+    /* left: calc((650/375)*100vh); */
+    left: calc((650/812)*100vw);
+    top: calc((50/812)*100vw);
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;

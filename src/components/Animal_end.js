@@ -95,7 +95,7 @@ const Animal_end = (props) => {
                 animate={animate}
                 transition={{
                     ease: easeOutBounce,
-                    duration: .6,
+                    duration: active ? .6 : 0,
                     delay: active ? delayBase + .1 : 0
                 }}
             />
@@ -110,21 +110,21 @@ const Animal_end = (props) => {
                 animate={animate}
                 transition={{
                     ease: easeOutBounce,
-                    duration: .6,
+                    duration: active ? .6 : 0,
                     delay: active ? delayBase + 0.3 : 0
                 }} />
             <motion.img src={animalend5} className='animal-end-elephant' initial={initial}
                 animate={animate}
                 transition={{
                     ease: easeOutBounce,
-                    duration: .6,
+                    duration: active ? .6 : 0,
                     delay: active ? delayBase + 0.35 : 0
                 }} />
             <motion.img src={animalend6} className='animal-end-aligator' initial={initial}
                 animate={animate}
                 transition={{
                     ease: easeOutBounce,
-                    duration: .6,
+                    duration: active ? .6 : 0,
                     delay: active ? delayBase + 0.4 : 0
                 }} />
 
@@ -196,8 +196,33 @@ const Animal_end = (props) => {
                 </div>
             </div>
             <div className='animal-end-buttonWrap' ref={textRef}>
-                <button className='animal-end-button1'>Read again?</button>
-                <button className='animal-end-button2'>Find more sounds</button>
+                <motion.button
+                    initial={{
+                        y: '10vw'
+                    }}
+                    animate={{
+                        y: active ? 0 : '10vw'
+                    }}
+                    transition={{
+                        duration: active ? 0.6 : 0,
+                        delay: active ? delayBase + 2.3 : 0,
+                    }}
+                    className='animal-end-button1'
+                >Read again?
+                </motion.button>
+                <motion.button
+                    initial={{
+                        y: '10vw'
+                    }}
+                    animate={{
+                        y: active ? 0 : '10vw'
+                    }}
+                    transition={{
+                        duration: active ? 0.6 : 0,
+                        delay: active ? delayBase + 2.5 : 0,
+                    }}
+                    className='animal-end-button2'
+                >Find more sounds</motion.button>
             </div>
 
 

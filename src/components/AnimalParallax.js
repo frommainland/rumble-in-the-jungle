@@ -2,6 +2,7 @@ import { motion, useViewportScroll, useTransform, AnimatePresence } from "framer
 import { useEffect, useRef, useState } from "react";
 import './AnimalParallax.css'
 import TextPathAnim from "./TextPathAnim";
+import TextPathAnim2 from "./TextPathAnim2";
 import { prologueEndDis } from "./Prologue_bg5";
 import useWindowDimensions from './useWindowDimensions'
 
@@ -60,7 +61,12 @@ const AnimalParallax = (props) => {
                 }}
             />
 
-            {/* <TextPathAnim color="#EB3136" /> */}
+            <TextPathAnim color="#FCD342" x={x3} text='Trump. Trump. Trump.' top={0} fontScaleFactor={1}/>
+            <TextPathAnim color="#FCD342" x={x5} text='Walking in the jungle.' top={50} fontScaleFactor={0.5}/>
+
+
+            <TextPathAnim2 color="#1C60E3" x={x3} text='Whoop. Whoop. Whoop.' top={100} fontScaleFactor={2}/>
+            <TextPathAnim2 color="#1C60E3" x={x5} text='Swing in the trees.' top={140} fontScaleFactor={.75}/>
 
             <motion.div className='animalParallax-item animalParallax-item-bg2'
                 style={{
