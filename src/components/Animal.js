@@ -15,17 +15,17 @@ const Animal = (props) => {
     const { scrollYProgress, scrollY } = useViewportScroll();
 
     // test
-    const [currentY, setCurrentY] = useState(0);
-    useEffect(() => {
-        const unsubscribeY = scrollY.onChange((v) => setCurrentY(v.toFixed()));
-        return () => {
-            unsubscribeY();
-        };
-    });
-    const testY = useTransform(scrollY, [0, 100], [0, 100], { clamp: false });
+    // const [currentY, setCurrentY] = useState(0);
+    // useEffect(() => {
+    //     const unsubscribeY = scrollY.onChange((v) => setCurrentY(v.toFixed()));
+    //     return () => {
+    //         unsubscribeY();
+    //     };
+    // });
+    // const testY = useTransform(scrollY, [0, 100], [0, 100], { clamp: false });
     // test
 
-    const {width, height} = useWindowDimensions()
+    const { width, height } = useWindowDimensions()
 
     // text title anim
     const [titleAnim, setTitleAnim] = useState(false);
@@ -43,6 +43,10 @@ const Animal = (props) => {
             }
         });
     }, [scrollY]);
+
+
+    // animal audio 
+    // const [animalOnPlay, setAnimalOnPlay] = useState('')
 
     return (
         <div className="animal-wrap">
@@ -95,7 +99,7 @@ const Animal = (props) => {
                 />
             </section>
 
-            <Animal_sound color={props.color} sound={props.sound} title={props.title}/>
+            <Animal_sound color={props.color} sound={props.sound} title={props.title} audio={props.audio} getAnimalAudioName={props.getAnimalAudioName} />
         </div>
     );
 };

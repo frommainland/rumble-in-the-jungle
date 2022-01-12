@@ -1,5 +1,5 @@
 import './SwiperIndicator.css'
-import { motion, useViewportScroll } from 'framer-motion'
+import { motion, useViewportScroll, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 const SwiperIndicator = (props) => {
@@ -28,7 +28,7 @@ const SwiperIndicator = (props) => {
 
 
     return (
-        <motion.div className='swiperIndicator-wrap' animate={anim ? start : {}}>
+        <motion.div className='swiperIndicator-wrap' animate={anim ? start : 'default'}>
             <svg viewBox="0 0 86 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1200_9806)">
                     <rect x="86" width="46.7391" height="86" rx="9.45652" transform="rotate(90 86 0)" fill="#002007" />

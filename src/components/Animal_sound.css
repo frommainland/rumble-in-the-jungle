@@ -3,7 +3,8 @@
     height: 30vw;
     text-transform: uppercase;
     fill: #FCD342;
-    margin-bottom: 10vw;
+    margin: 0 auto 10vw;
+    width: 26vw;
 }
 
 .text {
@@ -53,7 +54,7 @@
 @-webkit-keyframes spin-reverse { 100% { -webkit-transform: rotate(-360deg); } }
 @keyframes spin-reverse { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
 
-.play{
+.play, .pause{
     width: calc(70/812 * 100vw);
     height: calc(70/812 * 100vw);
     position: absolute;

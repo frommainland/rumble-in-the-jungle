@@ -38,8 +38,11 @@ const AnimalDetails = (props) => {
         });
     };
 
-    return (
+    // only one sound could be played at a time, get the current animal name which is playing
+    const [animalAudioName, setAnimalAudioName] = useState(1)
 
+
+    return (
         <motion.div
             className='animalDetails-wrap'
             key='AnimalDetails'
@@ -80,6 +83,8 @@ const AnimalDetails = (props) => {
                         fact={Animal_data.elephant.animal_fact}
                         color={Animal_data.elephant.color}
                         sound={Animal_data.elephant.sound}
+                        audio={Animal_data.elephant.audio}
+                        getAnimalAudioName={setAnimalAudioName}
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -95,6 +100,9 @@ const AnimalDetails = (props) => {
                         fact={Animal_data.tiger.animal_fact}
                         color={Animal_data.tiger.color}
                         sound={Animal_data.tiger.sound}
+                        audio={Animal_data.tiger.audio}
+                        getAnimalAudioName={setAnimalAudioName}
+
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -110,6 +118,9 @@ const AnimalDetails = (props) => {
                         fact={Animal_data.monkey.animal_fact}
                         color={Animal_data.monkey.color}
                         sound={Animal_data.monkey.sound}
+                        audio={Animal_data.monkey.audio}
+                        getAnimalAudioName={setAnimalAudioName}
+
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -125,6 +136,9 @@ const AnimalDetails = (props) => {
                         fact={Animal_data.giraffe.animal_fact}
                         color={Animal_data.giraffe.color}
                         sound={Animal_data.giraffe.sound}
+                        audio={Animal_data.giraffe.audio}
+                        getAnimalAudioName={setAnimalAudioName}
+
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -144,6 +158,9 @@ const AnimalDetails = (props) => {
                         fact={Animal_data.crocodile.animal_fact}
                         color={Animal_data.crocodile.color}
                         sound={Animal_data.crocodile.sound}
+                        audio={Animal_data.crocodile.audio}
+                        getAnimalAudioName={setAnimalAudioName}
+
                     />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -159,6 +176,9 @@ const AnimalDetails = (props) => {
                         fact={Animal_data.toucan.animal_fact}
                         color={Animal_data.toucan.color}
                         sound={Animal_data.toucan.sound}
+                        audio={Animal_data.toucan.audio}
+                        getAnimalAudioName={setAnimalAudioName}
+
                     />
                 </SwiperSlide>
                 <SwiperSlide>

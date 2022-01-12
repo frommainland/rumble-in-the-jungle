@@ -49,7 +49,7 @@ const Button_animalFact = (props) => {
                 }
                 }>
                 Animal fun facts ↓ <br />
-                {props.status ? "true" : 'false'}
+                {/* {props.status ? "true" : 'false'} */}
             </motion.button >)
             }
         </AnimatePresence >

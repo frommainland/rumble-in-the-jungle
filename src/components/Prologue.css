@@ -6,6 +6,7 @@
 .prologueSectionPadding {
     height: 0.1px;
     background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    opacity: 0;
     bottom: 20%;
     position: absolute;
 }

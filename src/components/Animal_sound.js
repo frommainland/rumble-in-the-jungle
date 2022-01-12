@@ -1,7 +1,8 @@
 import "./Animal_sound.css";
 import { useRef, useEffect, useState } from "react";
 import useInView from "react-cool-inview";
-import play from '../img/AnimalSound-play.svg'
+import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function Animal_sound(props) {
 
@@ -25,9 +26,45 @@ export default function Animal_sound(props) {
     });
 
 
+    // play sound
+    const [tapped, setTapped] = useState(false);
+    const [playing, setPlaying] = useState(false);
+
+    const [audio] = useState(new Audio(props.audio))
+
+    useEffect(() => {
+        playing ? audio.play() : audio.pause();
+    }, [playing]);
+
+    useEffect(() => {
+        audio.addEventListener("ended", () => {
+            setPlaying(false);
+            setTapped(false);
+        });
+        return () => {
+            audio.removeEventListener("ended", () => {
+                setPlaying(false);
+                setTapped(false);
+            });
+        };
+    }, []);
+
+
+    // play and pause button svg path
+    const playPath = "M35 70C54.33 70 70 54.33 70 35C70 15.67 54.33 0 35 0C15.67 0 0 15.67 0 35C0 54.33 15.67 70 35 70ZM29.2762 19.1842C27.8758 18.2505 26 19.2545 26 20.9376V49.5893C26 51.2724 27.8758 52.2763 29.2762 51.3427L50.765 37.0168C52.0162 36.1827 52.0162 34.3442 50.765 33.51L29.2762 19.1842Z"
+
+    const pausePath = "M70 35C70 54.33 54.33 70 35 70C15.67 70 0 54.33 0 35C0 15.67 15.67 0 35 0C54.33 0 70 15.67 70 35ZM27 26.75C27 25.2312 28.2312 24 29.75 24C31.2688 24 32.5 25.2312 32.5 26.75V43.25C32.5 44.7688 31.2688 46 29.75 46C28.2312 46 27 44.7688 27 43.25V26.75ZM40.25 24C38.7312 24 37.5 25.2312 37.5 26.75V43.25C37.5 44.7688 38.7312 46 40.25 46C41.7688 46 43 44.7688 43 43.25V26.75C43 25.2312 41.7688 24 40.25 24Z"
 
     return (
-        <div className='svgWrapper' ref={observe}>
+        <div className='svgWrapper' ref={observe}
+            onClickCapture={() => {
+                setTapped(!tapped);
+                setPlaying(!playing);
+                props.getAnimalAudioName(props.title)
+            }}>
+            <audio>
+                <source type="audio/mp3" src={props.audio} />
+            </audio>
             <div className='outerText'>
                 <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={inView ? 'animate-reverse' : ''}>
                     <path fillRule="evenodd" clipRule="evenodd" d={outerPath} id="Text"
@@ -55,12 +92,61 @@ export default function Animal_sound(props) {
                 </svg>
             </div>
 
-            <div className='play'>
-                <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M35 70C54.33 70 70 54.33 70 35C70 15.67 54.33 0 35 0C15.67 0 0 15.67 0 35C0 54.33 15.67 70 35 70ZM29.2762 19.1842C27.8758 18.2505 26 19.2545 26 20.9376V49.5893C26 51.2724 27.8758 52.2763 29.2762 51.3427L50.765 37.0168C52.0162 36.1827 52.0162 34.3442 50.765 33.51L29.2762 19.1842Z" fill={props.color} />
-                </svg>
 
-            </div>
+            <AnimatePresence>
+                {!tapped && (
+                    <motion.div className='play'
+                        key={'play'}
+                        style={{
+                            scale: 0,
+                            opacity: 0, 
+                            x: '-50%',
+                            y: '-50%'
+                        }}
+                        animate={{
+                            scale: 1,
+                            opacity: 1
+                        }}
+                        exit={{
+                            scale: 0,
+                            opacity: 0
+                        }}>
+                        <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <motion.path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d={playPath}
+                                fill={props.color} />
+                        </svg>
+                    </motion.div>
+                )}
+                {tapped && (
+                    <motion.div className='pause'
+                        key={'pause'}
+                        style={{
+                            scale: 0,
+                            opacity: 0,
+                            x: '-50%',
+                            y: '-50%'
+                        }}
+                        animate={{
+                            scale: 1,
+                            opacity: 1
+                        }}
+                        exit={{
+                            scale: 0,
+                            opacity: 0
+                        }}>
+                        <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d={pausePath}
+                                fill={props.color} />
+                        </svg>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
         </div>
     );

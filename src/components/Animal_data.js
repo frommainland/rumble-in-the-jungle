@@ -17,12 +17,20 @@ import toucan1 from "../img/AnimalDetail-toucan1.png";
 import toucan2 from "../img/AnimalDetail-toucan2.png";
 import toucan3 from "../img/AnimalDetail-toucan3.png";
 
+// sound import
+import elephant from '../sound/elephant.mp3'
+import tiger from '../sound/tiger.mp3'
+import monkey from '../sound/monkey.mp3'
+import alligator from '../sound/alligator.mp3'
+import toucan from '../sound/toucan.mp3'
+import giraffe from '../sound/giraffe.mp3'
+
 const Animal_data = {
     // elephant
     elephant: {
         title: "Elephant",
         animal_quotes:
-            "It’s great to be an elephant. All big and fat and round, and wander through the jungle just elephing around.",
+            "All big and round,\nwander through the jungle ground.",
         animal_metrics: {
             left: {
                 quantity: "6",
@@ -51,14 +59,15 @@ const Animal_data = {
             img3: elephant3,
         },
         color: "#FCD342",
-        sound:'trumpet'
+        sound:'trumpet', 
+        audio: elephant
     },
 
     // tiger
     tiger: {
         title: "Tiger",
         animal_quotes:
-            "Everyone quivers and shudders and shivers, as soon as he opens his jaws.",
+            "We shudder and shiver,\nas soon as he looks for dinner.",
         animal_metrics: {
             left: {
                 quantity: "140-220",
@@ -87,14 +96,15 @@ const Animal_data = {
             img3: tiger3,
         },
         color: "#1C60E3",
-        sound:' grrrrr'
+        sound:' grrrrr',
+        audio: tiger
     },
 
     // monkey
     monkey: {
         title: "Monkey",
         animal_quotes:
-            "It’s great to be a monkey, swinging through the trees. If we can’t find nuts to eat, we munch each others’ flees",
+            "Swinging through the trees, \nwe find nuts to eat.",
         animal_metrics: {
             left: {
                 quantity: "0.6-0.9",
@@ -123,14 +133,15 @@ const Animal_data = {
             fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
         },
         color: "#5BC07E",
-        sound:' whoop'
+        sound:' whoop',
+        audio: monkey
     },
 
     // Giraffe
     giraffe: {
         title: "Giraffe",
         animal_quotes:
-            "Some animals laugh at the gangly girafe, but I hold my head up and feel proud. My cheek is getting kissed by a cloud.",
+            "I hold my head up and feel proud.\nMy cheek is getting kissed by a cloud.",
         animal_metrics: {
             left: {
                 quantity: "1900",
@@ -160,14 +171,15 @@ const Animal_data = {
             img3: giraffe3,
         },
         color: "#EB3136",
-        sound:' brrrrr'
+        sound:' brrrrr',
+        audio: giraffe
     },
 
     // Crocodile
     crocodile: {
         title: "Crocodile",
         animal_quotes:
-            "Snap, snap, snap, his jaw snaps.\nSmack, smack, smack, his tail smacks.\nTap, tap, tap, he crawls away",
+            "Snap, snap, snap, his jaw snaps.\nSmack, smack, smack, his tail smacks.",
         animal_metrics: {
             left: {
                 quantity: "800",
@@ -196,14 +208,15 @@ const Animal_data = {
             fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
         },
         color: "#FA5F1D",
-        sound:' hissss'
+        sound:' hissss',
+        audio: alligator
     },
 
     // Toucan
     toucan: {
         title: "Toucan",
         animal_quotes:
-            "I carry my own airconditioner, which is my beak.\nToucan, can you?",
+            "I eat some berries and eat a seed,\nfresh fruit is what I need.",
         animal_metrics: {
             left: {
                 quantity: "0.1-0.7",
@@ -232,7 +245,8 @@ const Animal_data = {
             fact3: "African forest elephants live in family groups of up to 20 individuals and forage on leaves, grasses, seeds, fruit, and tree bark.",
         },
         color: "#ED93ED",
-        sound:' groomkk'
+        sound:' groomkk',
+        audio: toucan
     },
 };
 

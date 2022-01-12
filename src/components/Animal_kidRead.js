@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import "./Animal_kidRead.css";
 import Animal_kidRead_play from "./Animal_kidRead_play";
 import Animal_kidRead_pause from "./Animal_kidRead_pause";
-import mp3 from "../sound/elephant1.mp3";
+import mp3 from "../sound/elephant.mp3";
 
 export default function Animal_kidRead(props) {
     const [tapped, setTapped] = useState(false);
@@ -81,6 +81,6 @@ export default function Animal_kidRead(props) {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div >
+        </div>
     );
 }

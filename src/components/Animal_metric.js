@@ -7,14 +7,14 @@ const Animal_metric = (props) => {
     const smooth = [0.4, 0, 0, 1];
     const { observe, inView } = useInView({
         // Stop observe when the target enters the viewport, so the "inView" only triggered once
-        unobserveOnEnter: false,
+        unobserveOnEnter: true,
         // Shrink the root margin, so the animation will be triggered once the target reach a fixed amount of visible
-        rootMargin: "-20px 0px -20px 0px",
+        // rootMargin: "0px 0px -20px 0px",
     });
 
     return (
         <div className="animal-metrics-item" ref={observe}>
-            <motion.div className="animal-metric-item-number" animate={{}}>
+            <motion.div className="animal-metric-item-number">
                 <motion.p
                     initial={{
                         y: "4.4vw",
@@ -39,7 +39,7 @@ const Animal_metric = (props) => {
                             y: inView ? 0 : "3vw",
                             transition: {
                                 ease: smooth,
-                                duration: 0.4,
+                                duration: 0.25,
                                 delay: props.index * 0.1 + 0.1,
                             },
                         }}

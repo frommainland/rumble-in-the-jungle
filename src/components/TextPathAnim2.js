@@ -78,6 +78,7 @@ const TextPathAnim2 = (props) => {
             top: props.top,
             left: '50vw'
         }}>
+        
             <svg ref={observe} viewBox="0 -50 482 297" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <filter id="f1">
                     <feGaussianBlur in="SourceGraphic" stdDeviation={svgBlur} />

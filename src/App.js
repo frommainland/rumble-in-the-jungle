@@ -69,7 +69,7 @@ function App() {
                 style={{
                     position: "fixed",
                     color: "red",
-                    fontSize: 16,
+                    fontSize: 0,
                     zIndex: 20,
                     bottom: 0
                 }}

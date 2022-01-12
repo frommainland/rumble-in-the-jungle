@@ -89,7 +89,7 @@ export default function Prologue(props) {
                 }}></div>
 
             {/* hint user to swiper right */}
-            <SwiperIndicator currentX={currentX} />
+            {/* <SwiperIndicator currentX={currentX} /> */}
 
         </div>
     );
